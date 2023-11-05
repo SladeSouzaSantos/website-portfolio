@@ -1,0 +1,33 @@
+{
+  "name": "website-portfolio",
+  "version": "1.0.0",
+  "description": "Otimizar site",
+  "main": "index.js",
+  "author": "Pedro Santos",
+  "license": "ISC",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.17",
+    "@babel/preset-env": "^7.22.15",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-inline-source": "^4.0.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-rev": "^7.0.0",
+    "gulp-rev-delete-original": "^0.1.0",
+    "gulp-rev-replace": "^0.4.3",
+    "gulp-sequence": "^0.4.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-useref": "^3.0.8"
+  }
+}

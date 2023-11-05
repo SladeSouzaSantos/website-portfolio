@@ -1,0 +1,58 @@
+[ 
+    {
+        "local_titulo": "Greencity Sustainable Energy",
+        "local_duracao": "Fevereiro de 2019 - Atualmente",
+        "tipo": "trabalho",
+        "cargo_titulo": "Sócio-Administrador",
+        "cargo_descricao": "Sou um profissional apaixonado e dedicado na área de energia renovável, com uma sólida experiência na criação, implementação e gerenciamento de soluções sustentáveis para atender às necessidades de clientes em busca de alternativas limpas e eficientes de energia. Minha carreira abrange um amplo espectro de responsabilidades e habilidades, incluindo: vendas e consultoria técnica; projeto e instalação de sistemas; gerenciamento de equipe;  suporte ao cliente."
+    },
+    {
+        "local_titulo": "UNISUL",
+        "local_duracao": "Julho de 2023 - Atualmente",
+        "tipo": "academia",
+        "cargo_titulo": "Ciência da Computação",
+        "cargo_descricao": "Meu programa de estudos se concentra em adquirir uma compreensão aprofundada dos princípios fundamentais da computação e desenvolver habilidades práticas em programação, resolução de problemas e desenvolvimento de software. Minha formação inclui uma ampla gama de tópicos, desde algoritmos e estruturas de dados até redes de computadores e segurança da informação."
+    },
+    {
+        "local_titulo": "ESCOLA POLITÉCNICA BRASILEIRA",
+        "local_duracao": "Outubro de 2020 - Outubro de 2022",
+        "tipo": "academia",
+        "cargo_titulo": "Técnico em Eletrotécnica",
+        "cargo_descricao": "Meu diploma em eletrotécnica é uma prova tangível do meu compromisso com a excelência em tecnologia elétrica e sistemas de energia. Durante o curso, adquiri conhecimento profundo e experiência prática em uma variedade de tópicos relacionados à eletrotécnica, fornecendo uma base sólida para minha carreira na área. Minha formação abrangeu uma ampla gama de competências técnicas essenciais, desde a concepção e manutenção de sistemas elétricos até a aplicação de normas de segurança."
+    },
+    {
+        "local_titulo": "UNYLEYA",
+        "local_duracao": "Setembro de 2018 - Setembro de 2020",
+        "tipo": "academia",
+        "cargo_titulo": "Pós-Graduação em Engenharia Elétrica e de Sistemas de Energia",
+        "cargo_descricao": "Durante o curso, concentrei-me na análise e aplicação prática de conceitos fundamentais relacionados à geração de energia, sistemas de transporte, distribuição, eficiência energética e segurança elétrica. Minha formação me equipou com as habilidades necessárias para enfrentar desafios complexos em ambientes industriais e residenciais, bem como para liderar projetos de inovação em geração e distribuição de energia elétrica."
+    },
+    {
+        "local_titulo": "Geowellex",
+        "local_duracao": "Março de 2017 - Outubro de 2018",
+        "tipo": "trabalho",
+        "cargo_titulo": "Mud Logging",
+        "cargo_descricao": "Durante meu período de emprego, atuei desempenhando um papel essencial na exploração e monitoramento de poços de petróleo e gás natural. Minha função envolveu a coleta, análise e interpretação de dados geológicos e de perfuração em tempo real, a fim de otimizar a eficiência da perfuração e a segurança operacional."
+    },
+    {
+        "local_titulo": "CTGAS-ER",
+        "local_duracao": "Agosto de 2016 - Setembro de 2017",
+        "tipo": "academia",
+        "cargo_titulo": "Especialização Técnica em Energia Eólica",
+        "cargo_descricao": "Minha especialização foi um programa de formação abrangente, projetado para capacitar profissionais com conhecimentos especializados em todos os aspectos da energia eólica, desde a medição anemométrica até a integração bem-sucedida de plantas eólicas na rede elétrica."
+    },
+    {
+        "local_titulo": "SIG Software e Consultoria em TI",
+        "local_duracao": "Junho de 2016 - Fevereiro de 2017",
+        "tipo": "trabalho",
+        "cargo_titulo": "Programador de Sistemas",
+        "cargo_descricao": "Durante meu período como programador tive a oportunidade de atuar no desenvolvimento de software utilizando a linguagem Java, desempenhando um papel fundamental em projetos de manutenção evolutiva, implantação e sustentação de sistemas utilizado por diversas Universidades Federais Brasileira. Além disso, aprendi a trabalhar com metodologias ágeis, como Scrum, e a colaborar em projetos de desenvolvimento em equipe."
+    },
+    {
+        "local_titulo": "UnP",
+        "local_duracao": "Fevereiro de 2010 - Fevereiro de 2015",
+        "tipo": "academia",
+        "cargo_titulo": "Engenheiro de Petróleo e Gás",
+        "cargo_descricao": "Minha graduação preparou-me para atuar em toda a cadeia produtiva da indústria petrolífera. O curso abrangeu uma ampla gama de disciplinas, desde a prospecção e exploração até a produção, explotação, processamento e refino de petróleo e gás."
+    }
+]

@@ -1,0 +1,8 @@
+Install NVM
+Install node v12.18.1
+Execute npm install -g gulp-cli para instalar o Gulp globalmente (Terminal).
+Abra o terminal na pasta do projeto e execute npm init -y.
+Crie o arquivo gulpfile.js na pasta raiz da pasta do projeto.
+Copie as dependencias e informações faltantes do package.json e cole no que foi criado.
+Execute npm install.
+Execute gulp.

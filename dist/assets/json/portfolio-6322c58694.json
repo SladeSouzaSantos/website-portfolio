@@ -1,0 +1,30 @@
+[ 
+    {
+        "titulo": "Siberian Web Solutions",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "siberianwebsolutions-website.png",
+        "linguagens": ["wordpress"],
+        "icon_acess": "website",
+        "site": "https://siberianwebsolutions.com"
+    },
+    {
+        "titulo": "Greencity Solutions",
+        "categoria": "APPs",
+        "tipo": "app",
+        "imagem": "greencity-solutions.jpeg",
+        "linguagens": ["flutter", "dart", "sql"],
+        "icon_acess": "github",
+        "site": "https://github.com/SladeSouzaSantos/greencity_office"
+    },
+    {
+        "titulo": "Greencity Sustainable Energy",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "greencity-website.jpeg",
+        "linguagens": ["wordpress", "php"],
+        "icon_acess": "website",
+        "site": "https://greencity.net.br"
+    }
+    
+]
