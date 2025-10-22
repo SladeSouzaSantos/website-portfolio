@@ -1,0 +1,28 @@
+[    
+    {
+        "titulo": "HTML",
+        "percentagem": 90,
+        "idicon": "html"
+    },
+    {
+        "titulo": "CSS",
+        "percentagem": 85,
+        "idicon": "css"
+    },
+    {
+        "titulo": "JScript",
+        "percentagem": 80,
+        "idicon": "jscript"
+    },    
+    {
+        "titulo": "TypeScript",
+        "percentagem": 75,
+        "idicon": "typescript"
+    },
+    {
+        "titulo": "Dart",
+        "percentagem": 90,
+        "idicon": "dart"
+    }
+    
+]

@@ -19,7 +19,7 @@
 }
 
 .header__menu__button{
-    --menu-img: url("assets/img/menu.svg");
+    --menu-img: url("../../assets/img/menu.svg");
     --mask-size: 100%;
     --mask-repeat: no-repeat;
     --mask-position: center;

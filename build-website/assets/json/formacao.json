@@ -1,0 +1,49 @@
+[ 
+    {
+        "local_titulo": "UNISUL",
+        "local_duracao": "Julho de 2023 - Atualmente",
+        "tipo": "academia",
+        "cargo_titulo": "Ciência da Computação",
+        "cargo_descricao": "Meu programa de estudos se concentra em adquirir uma compreensão aprofundada dos princípios fundamentais da computação e desenvolver habilidades práticas em programação, resolução de problemas e desenvolvimento de software. Minha formação inclui uma ampla gama de tópicos, desde algoritmos e estruturas de dados até redes de computadores e segurança da informação."
+    },
+    
+    {
+        "local_titulo": "UNIBF",
+        "local_duracao": "Abril de 2024 - Agosto de 2025",
+        "tipo": "academia",
+        "cargo_titulo": "Tecnólogo em Gestão da Tecnologia da Informação",
+        "cargo_descricao": "Formação abrangente que une conhecimentos técnicos e gerenciais de TI. O foco principal está na Gestão Estratégica de TI, incluindo disciplinas como Governança em TI, Gestão de Infraestrutura, BI e Big Data e Gestão de Projetos (Agile/Scrum). A base técnica sólida inclui Banco de Dados, Redes de Computadores, Sistemas Operacionais e desenvolvimento de software (Programação Orientada a Objetos e Engenharia de Software)."
+    },
+    
+    {
+        "local_titulo": "ESCOLA POLITÉCNICA BRASILEIRA",
+        "local_duracao": "Outubro de 2020 - Outubro de 2022",
+        "tipo": "academia",
+        "cargo_titulo": "Técnico em Eletrotécnica",
+        "cargo_descricao": "Meu diploma em eletrotécnica é uma prova tangível do meu compromisso com a excelência em tecnologia elétrica e sistemas de energia. Durante o curso, adquiri conhecimento profundo e experiência prática em uma variedade de tópicos relacionados à eletrotécnica, fornecendo uma base sólida para minha carreira na área. Minha formação abrangeu uma ampla gama de competências técnicas essenciais, desde a concepção e manutenção de sistemas elétricos até a aplicação de normas de segurança."
+    },
+
+    {
+        "local_titulo": "UNYLEYA",
+        "local_duracao": "Setembro de 2018 - Setembro de 2020",
+        "tipo": "academia",
+        "cargo_titulo": "Pós-Graduação em Engenharia Elétrica e de Sistemas de Energia",
+        "cargo_descricao": "Durante o curso, concentrei-me na análise e aplicação prática de conceitos fundamentais relacionados à geração de energia, sistemas de transporte, distribuição, eficiência energética e segurança elétrica. Minha formação me equipou com as habilidades necessárias para enfrentar desafios complexos em ambientes industriais e residenciais, bem como para liderar projetos de inovação em geração e distribuição de energia elétrica."
+    },
+    
+    {
+        "local_titulo": "CTGAS-ER",
+        "local_duracao": "Agosto de 2016 - Setembro de 2017",
+        "tipo": "academia",
+        "cargo_titulo": "Especialização Técnica em Energia Eólica",
+        "cargo_descricao": "Minha especialização foi um programa de formação abrangente, projetado para capacitar profissionais com conhecimentos especializados em todos os aspectos da energia eólica, desde a medição anemométrica até a integração bem-sucedida de plantas eólicas na rede elétrica."
+    },
+    
+    {
+        "local_titulo": "UnP",
+        "local_duracao": "Fevereiro de 2010 - Fevereiro de 2015",
+        "tipo": "academia",
+        "cargo_titulo": "Engenheiro de Petróleo e Gás",
+        "cargo_descricao": "Minha graduação preparou-me para atuar em toda a cadeia produtiva da indústria petrolífera. O curso abrangeu uma ampla gama de disciplinas, desde a prospecção e exploração até a produção, explotação, processamento e refino de petróleo e gás."
+    }
+]

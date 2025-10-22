@@ -1,0 +1,32 @@
+[
+    {
+        "titulo": "C",
+        "percentagem": 80,
+        "idicon": "c"
+    },
+    {
+        "titulo": "C++",
+        "percentagem": 85,
+        "idicon": "cplus"
+    },
+    {
+        "titulo": "Java",
+        "percentagem": 95,
+        "idicon": "java"
+    },
+    {
+        "titulo": "Python",
+        "percentagem": 80,
+        "idicon": "python"
+    },    
+    {
+        "titulo": "Node.js",
+        "percentagem": 75,
+        "idicon": "nodejs"
+    },    
+    {
+        "titulo": "PHP",
+        "percentagem": 80,
+        "idicon": "php"
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "titulo": "Wordpress",
+        "percentagem": 95,
+        "idicon": "wordpress"
+    },    
+    {
+        "titulo": "Flutter",
+        "percentagem": 90,
+        "idicon": "flutter"
+    }    
+]
