@@ -5,7 +5,11 @@ var $ = require('gulp-load-plugins')({rename: {'gulp-rev-delete-original':'revde
 
 /* Tasks base */
 gulp.task('copy', function() {
-    return gulp.src(['build-website/assets/{img,font}/**/*', 'build-website/libs/**/*','build-website/assets/json/**/*'], {base: 'build-website'})
+    return gulp.src([
+      'build-website/assets/{img,fonts}/**/*', 
+      'build-website/libs/**/*',
+      'build-website/assets/json/**/*'
+    ], {base: 'build-website'})
         .pipe(gulp.dest('dist'));
 });
 
@@ -68,7 +72,7 @@ gulp.task('imagemin', function() {
 
 /* Revisão de arquivos */
 gulp.task('rev', function(){
-  return gulp.src(['dist/assets/**/*.{css,js,json}'])
+  return gulp.src(['dist/assets/**/*.{css,js}'])
     .pipe($.rev())
     .pipe($.revdel())
     .pipe(gulp.dest('dist/assets/'))
@@ -80,7 +84,7 @@ gulp.task('revreplace', ['rev'], function(){
   return gulp.src(['dist/index.html', 'dist/**/*.css'])
     .pipe($.revReplace({
         manifest: gulp.src('dist/rev-manifest.json'),
-        replaceInExtensions: ['.html', '.json', '.js', '.css']
+        replaceInExtensions: ['.html', '.js', '.css']
     }))
     .pipe(gulp.dest('dist/'));
 });
@@ -89,5 +93,5 @@ gulp.task('revreplace', ['rev'], function(){
 
 /* Alias */
 gulp.task('minify', ['minify-js', 'minify-css', 'minify-html']);
-gulp.task('build', $.sequence(['minify-js', 'minify-css', 'imagemin'], 'useref', 'revreplace'));
+gulp.task('build', $.sequence('copy', ['minify-js', 'minify-css', 'imagemin'], 'useref', 'revreplace'));
 gulp.task('default', $.sequence('clean', 'copy', 'build'));
