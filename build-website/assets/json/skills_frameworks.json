@@ -1,12 +1,14 @@
 [
     {
-        "titulo": "Wordpress",
+        "titulo": "WordPress",
         "percentagem": 95,
-        "idicon": "wordpress"
-    },    
+        "idicon": "wordpress",
+        "descricao": "Amplo domínio na criação, personalização e manutenção de websites institucionais e e-commerce. Proficiência em otimização de performance, segurança e desenvolvimento de temas e plugins customizados utilizando HTML, CSS, JavaScript e PHP."
+    },
     {
         "titulo": "Flutter",
         "percentagem": 90,
-        "idicon": "flutter"
+        "idicon": "flutter",
+        "descricao": "Especialista em desenvolvimento Mobile multi-plataforma (iOS e Android). Foco na implementação de **Clean Architecture** e gerenciamento de estado eficiente para garantir performance nativa, interfaces ricas em UX/UI e código altamente escalável."
     }    
 ]

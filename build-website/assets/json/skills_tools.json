@@ -2,6 +2,7 @@
     {
         "titulo": "Figma",
         "percentagem": 85,
-        "idicon": "figma"
+        "idicon": "figma",
+        "descricao": "Proficiência no uso do Figma para design de interfaces (UI) e prototipagem de experiência do usuário (UX). Habilidade para transformar wireframes em designs funcionais e preparar especificações visuais para o desenvolvimento Front-end e Mobile, garantindo a fidelidade entre design e código."
     }
 ]

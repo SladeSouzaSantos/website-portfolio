@@ -3,7 +3,8 @@
     {
         "titulo": "SQL",
         "percentagem": 80,
-        "idicon": "sql"
+        "idicon": "sql",
+        "descricao": "Proficiência em SQL para modelagem de dados relacional (ex: PostgreSQL/SQL Server), otimização de consultas e garantia da integridade transacional. Experiência na gestão e manipulação eficiente de grandes volumes de dados, fundamental para a construção de sistemas Backend robustos e de alta performance."
     }
     
 ]
