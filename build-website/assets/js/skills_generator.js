@@ -57,7 +57,7 @@ class SkillsGenerator {
                 <h3 class="skills-group__title neon">${skill.titulo}</h3>
                 <div class="circle-chart surface-variant">
                     <div class="circle-chart-icon-background"></div>
-                    <svg class="circle-chart-background-icon neon surface-variant-filter" role="img" aria-label="Ícone da Habilidade"><use xlink:href="assets/img/icons.svg#${skill.idicon}"/></svg>
+                    <svg class="circle-chart-background-icon neon on-surface-filter" role="img" aria-label="Ícone da Habilidade"><use xlink:href="assets/img/icons.svg#${skill.idicon}"/></svg>
                     <div class="circle-chart-background surface"></div>
                     <div class="percentage-bar" style="background: conic-gradient(var(--start-percentagem-bar-color) 0%, var(--end-percentagem-bar-color) ${skill.percentagem}%, transparent 0% 100%);"></div>
                 </div>
