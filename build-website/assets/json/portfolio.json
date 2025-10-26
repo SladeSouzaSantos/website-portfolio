@@ -31,6 +31,17 @@
         "icon_acess": "website",
         "site": "https://greencity.net.br",
         "descricao": "Website institucional e de vendas para empresa de energia fotovoltaica. Utilizado para captação de leads e apresentação de serviços. Implementação com WordPress e PHP para funcionalidades customizadas de contato e orçamento."
+    },
+    {
+        "id": "sigaa_esig",
+        "titulo": "Sistema Integrado de Gestão de Atividades Acadêmicas (SIGAA)",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "sigaa.png",
+        "linguagens": ["postgresql", "hibernate", "java", "jboss"],
+        "icon_acess": "website",
+        "site": "",
+        "descricao": "Participação no desenvolvimento de um dos maiores sistemas de gestão acadêmica do Brasil (utilizado por universidades federais). Minha atuação focou no desenvolvimento de novas funcionalidades em Java (POO) e PostgreSQL, seguindo os princípios de Design Patterns. Atuei diretamente na garantia de qualidade, realizando testes funcionais e manuais das novas features implementadas, além da documentação técnica das alterações."
     }
     
 ]
