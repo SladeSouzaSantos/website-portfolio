@@ -29,7 +29,7 @@
         "imagem": "greencity-website.jpeg",
         "linguagens": ["wordpress", "php"],
         "icon_acess": "website",
-        "site": "https://greencity.net.br",
+        "site": "",
         "descricao": "Website institucional e de vendas para empresa de energia fotovoltaica. Utilizado para captação de leads e apresentação de serviços. Implementação com WordPress e PHP para funcionalidades customizadas de contato e orçamento."
     },
     {
