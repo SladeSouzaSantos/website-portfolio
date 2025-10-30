@@ -20,7 +20,6 @@
             formacaos.forEach(formacao => {
                 interacoes++;
                 if(interacoes == formacaos.length){
-                    console.log("entrou aqui!!!");
                     styleUltimoContainer = 'style="padding-bottom: 6px"';
                 }
                 exibicaoComputador += `

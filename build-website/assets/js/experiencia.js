@@ -20,7 +20,6 @@
             experiencias.forEach(experiencia => {
                 interacoes++;
                 if(interacoes == experiencias.length){
-                    console.log("entrou aqui!!!");
                     styleUltimoContainer = 'style="padding-bottom: 6px"';
                 }
                 exibicaoComputador += `
