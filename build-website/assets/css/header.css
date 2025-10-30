@@ -72,6 +72,19 @@
     transform-origin: center center;
 }
 
+#theme-transition-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    clip-path: circle(0% at var(--click-x) var(--click-y));
+    background-color: var(--background-new-theme);
+    transition: clip-path 0.7s ease-in-out; 
+    z-index: 9999;
+    pointer-events: none;
+}
+
 @media(max-width: 1076px){
     .header__menu{
         order: -1;
