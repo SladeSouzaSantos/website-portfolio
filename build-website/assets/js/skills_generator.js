@@ -55,7 +55,7 @@ class SkillsGenerator {
 
         // Gera o HTML para cada skill
         const htmlContent = skills.map(skill => `
-            <li>
+            <li class="zoom">
                 <h3 class="skills-group__title neon">${skill.titulo}</h3>
                 <div class="circle-chart surface-variant">
                     <div class="circle-chart-icon-background"></div>

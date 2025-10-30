@@ -106,18 +106,6 @@
     animation: rotate-bar 5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
 
-.skills-group li:hover .neon, #habilidades .skills__title:hover{
-    animation: svg-neon 3s ease-in-out infinite alternate;
-}
-
-.skills-group li:hover .circle-chart-icon-background{
-    animation: svg-neon-background 3s ease-in-out infinite alternate;
-}
-
-.skills-group li:hover .percentage-bar{   
-    animation: svg-neon 3s linear infinite alternate, rotate-bar 5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-}
-
 .cursor-pointer {
     cursor: pointer;
 }
@@ -125,28 +113,6 @@
 @keyframes rotate-bar {    
     to{
         transform: rotate(360deg);
-    }
-}
-
-@keyframes svg-neon{    
-    from{
-        filter: var(--md-sys-color-neon-start-filter);
-        text-shadow: var(--md-sys-color-neon-shadow);
-    }
-    to{
-        filter: var(--md-sys-color-neon-end-filter);
-        text-shadow: var(--md-sys-color-neon-shadow);
-    }
-}
-
-@keyframes svg-neon-background{    
-    from{
-        filter: var(--md-sys-color-neon-start-filter);
-        box-shadow: var(--md-sys-color-neon-shadow);
-    }
-    to{
-        filter: var(--md-sys-color-neon-end-filter);
-        box-shadow: var(--md-sys-color-neon-shadow);
     }
 }
 
