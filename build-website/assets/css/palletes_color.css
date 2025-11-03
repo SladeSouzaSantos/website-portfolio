@@ -294,7 +294,7 @@
 }
 
 .background {
-    background-color: var(--md-sys-color-background);
+    background-color: var(--md-sys-color-secondary-container);
 }
 .background-text {
     color: var(--md-sys-color-background);

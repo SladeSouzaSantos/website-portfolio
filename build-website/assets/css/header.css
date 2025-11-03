@@ -80,7 +80,7 @@
     height: 100vh;
     clip-path: circle(0% at var(--click-x) var(--click-y));
     background-color: var(--background-new-theme);
-    transition: clip-path 0.7s ease-in-out; 
+    transition: clip-path 0.3s ease-in-out; 
     z-index: 9999;
     pointer-events: none;
 }

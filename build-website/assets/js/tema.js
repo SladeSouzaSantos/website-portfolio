@@ -14,6 +14,10 @@ function positionTransitionMask() {
 }
 
 function handleThemeToggle() {
+
+    if (elementoButtonTema) {
+        elementoButtonTema.disabled = true;
+    }
     
     positionTransitionMask();
     
@@ -30,6 +34,12 @@ function handleThemeToggle() {
         document.body.classList.toggle("dark-mode");        
         elementoIconTema.innerHTML = newIconHTML;        
         transitionMask.style.clipPath = 'circle(0% at var(--click-x) var(--click-y))';
+
+        setTimeout(() => {
+            if (elementoButtonTema) {
+                elementoButtonTema.disabled = false;
+            }
+        }, 750);
         
     }, 700);
 }
