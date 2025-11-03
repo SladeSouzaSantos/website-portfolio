@@ -34,7 +34,7 @@
     align-items: center;
     width: 80%;
     gap: 10px;
-    animation: fadeInScale 0.8s ease-out 1.7s both; 
+    animation: fadeInScale 0.8s ease-out 0.6s both; 
 }
 
 .about__perfil-image{
@@ -78,11 +78,9 @@
     animation: slideInUp 0.3s ease-out forwards;
 }
 
-.about__perfil-social-media a:nth-child(1) .about__icons { animation-delay: 2.5s; }
-.about__perfil-social-media a:nth-child(2) .about__icons { animation-delay: 2.6s; }
-.about__perfil-social-media a:nth-child(3) .about__icons { animation-delay: 2.7s; }
-.about__perfil-social-media a:nth-child(4) .about__icons { animation-delay: 2.8s; }
-
+.about__perfil-social-media a:nth-child(1) .about__icons { animation-delay: 0.8s; }
+.about__perfil-social-media a:nth-child(2) .about__icons { animation-delay: 1.0s; }
+.about__perfil-social-media a:nth-child(3) .about__icons { animation-delay: 1.2s; }
 
 .about__context{
     display: flex;
@@ -114,15 +112,15 @@
 }
 
 .about__context .about__title {
-    animation-delay: 3.0s; 
+    animation-delay: 0.8s; 
 }
 
 .about__context p:nth-child(2) {
-    animation-delay: 3.6s; 
+    animation-delay: 1.0s; 
 }
 
 .about__context p:nth-child(3) {
-    animation-delay: 3.9s; 
+    animation-delay: 1.2s; 
 }
 
 .job-badge {
