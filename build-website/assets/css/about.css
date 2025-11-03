@@ -125,6 +125,17 @@
     animation-delay: 3.6s; 
 }
 
+.job-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 @media(max-width: 780px){
     .about__group{
         flex-direction: column;
