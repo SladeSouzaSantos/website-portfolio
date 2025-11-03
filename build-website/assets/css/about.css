@@ -46,14 +46,14 @@
 .about__perfil-name{
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 900;
     font-style: italic; 
 }
 
 .about__perfil-job{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Mono', 'Courier New', monospace;
     font-size: 1.0rem;
-    font-weight: 300;
+    font-weight: 600;
     font-style: italic; 
 }
 
@@ -92,15 +92,15 @@
 }
 
 .about__title{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Mono', 'Courier New', monospace;
     font-size: 2.5rem;
     font-weight: 700;
 }
 
 .about__context p{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Mono', 'Courier New', monospace;
     font-size: 1.0rem;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1.25rem;
     text-align: justify;
     word-break: break-word; 

@@ -52,7 +52,7 @@
 }
 
 .header__navegation__link{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Mono', 'Courier New', monospace;
     font-weight: bold;
     text-decoration: none;
 }
@@ -95,7 +95,8 @@
     }
 
     .header__navegation{
-        display: none;        
+        display: none;
+        z-index: 10;        
     }
 
     .header__menu__check:checked~.header__navegation{

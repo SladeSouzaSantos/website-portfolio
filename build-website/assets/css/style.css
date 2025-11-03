@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     height: 100vh;
     box-sizing: border-box;
@@ -25,7 +29,7 @@ section{
 }
 
 h2{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Mono', 'Courier New', monospace;
     font-size: 2.5rem;
     font-weight: 700;
 }

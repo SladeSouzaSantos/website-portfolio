@@ -22,7 +22,7 @@
 }
 
 .skills-group__title{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Mono', 'Courier New', monospace;
     font-size: 1.25rem;
     font-weight: 600;
     text-align: center;
@@ -55,7 +55,7 @@
     text-align: center;
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Mono', 'Courier New', monospace;
     font-weight: 700;
     border-bottom: 2px solid var(--md-sys-color-on-secondary-container);
     padding-bottom: 0.5rem;
