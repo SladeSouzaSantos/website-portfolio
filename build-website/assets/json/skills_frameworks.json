@@ -21,7 +21,7 @@
     },
 
     {
-        "titulo": "JBoss / WildFly",
+        "titulo": "JBoss",
         "percentagem": 80,
         "idicon": "jboss",
         "descricao": "Experiência com o servidor de aplicação JBoss (atual WildFly) para desenvolvimento, deploy e manutenção de aplicações empresariais Java/EE. Fundamental para o contexto de sistemas legados de grande porte."
