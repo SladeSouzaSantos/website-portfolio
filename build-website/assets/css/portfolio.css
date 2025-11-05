@@ -171,7 +171,7 @@
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    padding: 20px;
+    padding: 0px;
 }
 
 .modal__content {
@@ -295,13 +295,10 @@
     }
 }
 
-@media (max-width: 578px){   
-
-    .modal__overlay{
-        padding: 0;
-    }
+@media (max-width: 720px){
 
     .modal__content {
+        margin: 0 10px;
         padding: 20px;
         padding-top: 50px;
     }

@@ -16,3 +16,10 @@ headerTimeline.from('.header__navegation__link', {
     stagger: 0.08,
     ease: 'power1.out',
 }, 0.4);
+
+gsap.to(".skills-group-radial", {
+    rotation: 360,
+    duration: 120,
+    ease: "none",
+    repeat: -1,
+});
