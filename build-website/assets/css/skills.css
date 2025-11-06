@@ -18,6 +18,41 @@
     }
 }
 
+#habilidades {
+    position: relative; /* Define o ponto de origem para o elemento absoluto */
+    overflow: hidden;
+    min-height: 400px;
+}
+
+/* O contêiner para o efeito (deve preencher toda a área da seção) */
+#floating-code-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Crucial para não bloquear o clique no conteúdo real */
+    z-index: 1; /* Fundo */
+}
+
+/* Estilo para cada palavra flutuante (será adicionado via JS) */
+.floating-code-word {
+    position: absolute; /* Permite posicionamento aleatório */
+    font-family: 'Roboto Mono', monospace; 
+    font-size: 1.5rem; /* Tamanho do texto */
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface); /* Uma cor sutil */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 1.5s ease-in-out; /* Transição suave */
+    /* Você pode adicionar um leve filtro para um efeito de neon, se quiser */
+    filter: blur(0.5px);
+    will-change: opacity, transform;
+}
+
+.skills__title{
+    z-index: 20;
+}
+
 .skills__icons__about{    
     width: 48px;
     height: 48px;
@@ -48,7 +83,7 @@
     height: 300px;    
     border-radius: 50%;
     background-color: var(--md-sys-color-secondary-container);
-    justify-content: center;
+    justify-content: center;z-index: 10;
 }
 
 .skills__center-node {

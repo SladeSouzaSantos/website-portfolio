@@ -57,3 +57,26 @@ h2{
 .cursor-pointer{
     cursor: pointer;
 }
+
+#btnVoltarAoTopo {
+    position: fixed; 
+    bottom: 20px;
+    right: 30px;
+    display: none;
+    background-color: var(--md-sys-color-accent);
+    color: var(--md-sys-color-on-accent);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 15px;
+    border-radius: 25px;
+    font-size: 18px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    width: 50px;
+    z-index: 1000;
+}
+
+#btnVoltarAoTopo:hover {
+    opacity: 1;
+}
