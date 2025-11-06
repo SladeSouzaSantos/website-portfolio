@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Typed(selector, options);
     }
     
-    initTyped('#typed-output', [escapeTypedString("Sobre mim")], null, 50, 5000, '|', true);
+    initTyped('#typed-output', [escapeTypedString("Sobre mim")], null, 50, 2000, '|', true);
     
     async function loadSkillsAndInitTyped(section) {
         try {
