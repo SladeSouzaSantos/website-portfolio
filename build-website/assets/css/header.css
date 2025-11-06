@@ -92,7 +92,7 @@
 
 
 
-@media(max-width: 1180px){
+@media(max-width: 1058px){
     .header__menu{
         order: -1;
     }

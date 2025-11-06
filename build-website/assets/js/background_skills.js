@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomTop = Math.random() * (topMax - topMin) + topMin;
 
         wordElement.style.transform = `translate(${randomLeft}px, ${randomTop}px)`;
-        wordElement.style.fontSize = `${Math.random() * 0.8 + 1.2}rem`; // Tamanho levemente aleatório (entre 1.2rem e 2.0rem)
+        
 
         // 3. Adiciona ao contêiner
         container.appendChild(wordElement);

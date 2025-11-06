@@ -54,7 +54,7 @@
                 // CÓDIGO DO CARD MODIFICADO: Remove a tag <a> e adiciona o onclick
                 portfolioAreaCodigo += `
                 <div class="portfolio__card-group card_${projeto.tipo} exibirPortfolio" onclick="abrirModalProjeto(${index})">
-                    <div class="portfolio__card portfolio__card-${projeto.tipo}" style="background-image: url('assets/img/${projeto.imagem}');"></div>
+                    <div class="portfolio__card cursor-pointer portfolio__card-${projeto.tipo}" style="background-image: url('assets/img/${projeto.imagem}');"></div>
                     <div class="portfolio__linguagens-projeto tertiary-container">
                         ${iconesLinguagemUtilizadasDiv}
                     </div>
