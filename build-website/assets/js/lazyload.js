@@ -1,7 +1,6 @@
 (function(){
 
-	// como vamos usar o throttle varias vezes (no scroll e no resize), 
-	// encapsulei essa funcionalidade numa função
+	// A função throttle (limitador de execução) permanece exatamente igual
 	function throttle(fn) {
 		fn.jarodei = false;
 		
@@ -16,18 +15,19 @@
 		};
 	}
 
-	// pega todas as imagens num array e pre-calcula seu topo
-	var imgs = document.querySelectorAll('img[data-src]:not([src])');
+	// ALTERAÇÃO 1: Seleciona as DIVs com a URL no atributo data-src (para background-image)
+	var bgElements = document.querySelectorAll('div[data-src]');
 	var cache, alturaJanela, scrollListener, resizeListener;
 
 	function refazCache() {
 		cache = [];
 
 		// calcula os topos no cache
-		for (var i = 0; i < imgs.length; i++) {
+		// Percorre os elementos selecionados (agora são DIVs)
+		for (var i = 0; i < bgElements.length; i++) {
 			cache.push({
-				topo: imgs[i].getBoundingClientRect().top + pageYOffset,
-				elemento: imgs[i]
+				topo: bgElements[i].getBoundingClientRect().top + pageYOffset,
+				elemento: bgElements[i]
 			});
 		}
 
@@ -41,15 +41,22 @@
 	}
 
 	function carregaImagens() {
-		// meu while não toca no DOM, observa apenas variáveis cacheadas e o pageYOffset.
-		// só manipulo o DOM quando preciso realmente mexer na imagem.
+		// A condição 'cache[0].topo < pageYOffset + alturaJanela + 200' 
+        // verifica se o elemento está a 200px da viewport.
 		while (cache.length && cache[0].topo < pageYOffset + alturaJanela + 200) {
-			var img = cache.shift().elemento;
-			img.src = img.getAttribute('data-src');
+			var element = cache.shift().elemento;
+			
+			// ALTERAÇÃO 2: Aplica a URL na propriedade CSS background-image
+			var imageUrl = element.getAttribute('data-src');
+			element.style.backgroundImage = 'url(\'' + imageUrl + '\')';
+
+			// Remove o atributo data-src para não ser reprocessado
+			element.removeAttribute('data-src');
 		}
 
 		// removo eventos se não precisar mais deles
-		if (cache.length == 0) {
+		// ALTERAÇÃO 3: Agora verifica se a lista de elementos 'data-src' está vazia
+		if (document.querySelectorAll('div[data-src]').length == 0) {
 			window.removeEventListener('scroll', scrollListener);
 			window.removeEventListener('resize', resizeListener);
 		}
