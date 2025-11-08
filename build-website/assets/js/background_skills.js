@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     
     // Configurações
-    const maxWords = 28; // <-- MUDANÇA AQUI: Aumentado para 28
+    const maxWords = 10;
     const animationInterval = 250; // Tempo entre a aparição de uma nova palavra (reduzi o intervalo para garantir que o efeito seja preenchido mais rapidamente)
     const fadeOutTime = 5000; // Tempo até a palavra desaparecer (em ms)
 
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomTop = Math.random() * (topMax - topMin) + topMin;
 
         wordElement.style.transform = `translate(${randomLeft}px, ${randomTop}px)`;
+        //wordElement.style.fontSize = `${Math.random() * 0.8 + 1.2}rem`; // Tamanho levemente aleatório (entre 1.2rem e 2.0rem)
         
 
         // 3. Adiciona ao contêiner

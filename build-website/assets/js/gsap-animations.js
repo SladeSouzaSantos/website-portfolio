@@ -10,10 +10,3 @@ headerTimeline.from('.header__navegation__link', {
     ease: 'power1.out',
     delay: 0.0
 });
-
-gsap.to(".skills-group-radial", {
-    rotation: 360,
-    duration: 120,
-    ease: "none",
-    repeat: -1,
-});

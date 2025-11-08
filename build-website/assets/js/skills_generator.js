@@ -18,19 +18,6 @@ class SkillsGenerator {
         
         this.gerarSkills();
     }
-    
-    // NOVO MÉTODO: Inicia as animações GSAP específicas desta seção
-    iniciarAnimacoesGSAP() {
-        
-        const iconSelector = `#${this.elementoInsercao.id} .skill-node-item`;
-
-        gsap.to(iconSelector, { 
-            rotation: -360,
-            duration: 120,
-            ease: "none",
-            repeat: -1,
-        });
-    }
 
     // Modifique o método gerarSkills()
     async gerarSkills() {
@@ -44,12 +31,6 @@ class SkillsGenerator {
             const skills = await responseJsonSkills.json();
             
             this.exibirSkillsCircule(skills);
-
-            // CHAMADA CRÍTICA: Inicia o GSAP SÓ DEPOIS que os ícones foram inseridos
-            // NOTA: Certifique-se de que o GSAP está carregado antes do skills_generator.js
-            if (typeof gsap !== 'undefined') {
-                this.iniciarAnimacoesGSAP(); 
-            }
 
         } catch (error) {
             console.error("Falha ao gerar as skills:", error);
@@ -107,6 +88,8 @@ class SkillsGenerator {
             // ADIÇÃO: Adiciona a classe única para mapeamento no Typed.js
             listItem.classList.add('skill-node-item', `skill-${skillClass}`); 
             
+            // O estilo 'transform' posiciona o ícone no círculo.
+            // A remoção da rotação inversa GSAP garante que este 'transform' seja o único aplicado.
             listItem.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
             
             // --- DATA ATTRIBUTES (para o hover e modal) ---
@@ -116,8 +99,7 @@ class SkillsGenerator {
 
             listItem.innerHTML = ` 
                 <div 
-                    class="skill-content cursor-pointer" 
-                    title="${skill.titulo}"
+                    class="skill-content cursor-pointer"
                     onclick="abrirModalSkill('${skillJsonString}')"
                 >
                     <svg class="skill-icon on-secondary-container-filter" role="img" aria-label="${skill.titulo}">
@@ -159,7 +141,7 @@ class SkillsGenerator {
 }
 
 // ==========================================================
-// FUNÇÕES GLOBAIS PARA O MODAL DE SKILLS
+// FUNÇÕES GLOBAIS PARA O MODAL DE SKILLS (Mantidas)
 // ==========================================================
 
 /**

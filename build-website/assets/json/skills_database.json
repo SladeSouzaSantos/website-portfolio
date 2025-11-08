@@ -1,30 +1,32 @@
-[    
+[
     {
-        "titulo": "SQL",
+        "titulo": "MySQL",
         "percentagem": 80,
-        "idicon": "sql",
-        "descricao": "Proficiência em SQL para modelagem de dados relacional (SQL Server/PostgreSQL), otimização de consultas e garantia da integridade transacional. Experiência na gestão e manipulação eficiente de grandes volumes de dados, fundamental para a construção de sistemas Backend robustos e de alta performance."
+        "idicon": "mysql",
+        "descricao": "Experiência prática com o SGBD MySQL, incluindo modelagem de dados, consultas complexas e otimização de performance. Essencial para a gestão de dados em sistemas back-end robustos, aproveitando meu domínio em bancos de dados relacionais."
     },
-
     {
-        "titulo": "NoSQL",
-        "percentagem": 80,
-        "idicon": "nosql",
-        "descricao": "Sólido conhecimento em bancos de dados não-relacionais, com experiência prática em MongoDB e Neo4J. Habilidade na modelagem de dados flexível para aplicações escaláveis, como mobile (utilizando Firebase) e Back-end."
+        "titulo": "H2 Database",
+        "percentagem": 75,
+        "idicon": "h2",
+        "descricao": "Experiência com o SGBD embutido H2, crucial para o desenvolvimento, testes de unidade e integração. Utilizado no projeto Lithology durante o estágio na Acrux, permitindo um ambiente de desenvolvimento ágil e suportando a prática de TDD (Test-Driven Development)."
     },
-
-    {	
-        "titulo": "PostgreSQL",	
-        "percentagem": 85,	
-        "idicon": "postgresql",	
-        "descricao": "Experiência prática com o SGBD PostgreSQL, incluindo modelagem de dados, consultas complexas (SQL) e otimização de performance. Essencial para a gestão de dados em sistemas robustos como o SIGAA."	
+    {
+        "titulo": "PostgreSQL",
+        "percentagem": 85,
+        "idicon": "postgresql",
+        "descricao": "Experiência prática com o SGBD PostgreSQL, incluindo modelagem de dados, consultas complexas (SQL) e otimização de performance. Essencial para a gestão de dados em sistemas robustos como o SIGAA."
     },
-
-    {	
-        "titulo": "Firebase (BaaS)",	
-        "percentagem": 85,	
-        "idicon": "firebase",	
-        "descricao": "Experiência com a plataforma Backend-as-a-Service (BaaS) Firebase, utilizando Firestore e Authentication em projetos mobile com Flutter. Essencial para desenvolvimento Full Stack e validação de fluxo de dados e segurança."	
+    {
+        "titulo": "Firebase (BaaS)",
+        "percentagem": 85,
+        "idicon": "firebase",
+        "descricao": "Experiência com a plataforma Backend-as-a-Service (BaaS) Firebase, utilizando Firestore e Authentication em projetos mobile com Flutter e outros sistemas, focando em escalabilidade e facilidade de integração."
+    },
+    {
+        "titulo": "MongoDB",
+        "percentagem": 70,
+        "idicon": "mongodb",
+        "descricao": "Conhecimento e aplicação de bancos de dados NoSQL orientados a documentos, como o MongoDB. Habilidade na modelagem de dados flexível para aplicações escaláveis, onde a velocidade e a adaptabilidade do esquema são prioridades."
     }
-
 ]

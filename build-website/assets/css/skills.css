@@ -1,12 +1,3 @@
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes fadeInScale {
     from {
         opacity: 0;
@@ -84,6 +75,19 @@
     border-radius: 50%;
     background-color: var(--md-sys-color-secondary-container);
     justify-content: center;z-index: 10;
+}
+
+.skills-rotating-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--md-sys-color-accent); 
+    box-shadow: 0 0 15px var(--md-sys-color-accent), inset 0 0 15px var(--md-sys-color-accent);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .skills__center-node {
