@@ -27,7 +27,7 @@
         "categoria": "SISTEMA DE GESTÃO (ERP)",
         "tipo": "pc",
         "imagem": "erp.webp",
-        "linguagens": ["typescript", "nodejs", "postgresql", "docker, python"],
+        "linguagens": ["typescript", "nodejs", "postgresql", "docker", "python"],
         "icon_acess": "website",
         "site": "https://erp.phasscode.com",
         "descricao": "Desenvolvimento de um ecossistema ERP completo para a Greencity. O sistema conta com uma arquitetura robusta separando Front-end (React) e Back-end (Django Rest Framework), conteinerização com Docker e deploy automatizado em infraestrutura própria. Inclui módulos de gestão de funcionários, controle de permissões de acesso e integração com banco de dados relacional."
