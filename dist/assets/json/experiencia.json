@@ -1,0 +1,33 @@
+[ 
+    {
+        "local_titulo": "Greencity Sustainable Energy",
+        "local_duracao": "Fevereiro de 2019 - Atualmente",
+        "tipo": "trabalho",
+        "cargo_titulo": "Engenheiro de Projetos Fotovoltaicos/Desenvolvedor Web e Mobile",
+        "cargo_descricao": "Atuação dupla focada em soluções tecnológicas e gestão de projetos de energia renovável. Responsável pelo desenvolvimento de um aplicativo Android utilizando Dart, Flutter, Firebase, Python e PHP, para o dimensionamento de sistemas fotovoltaicos e geração automatizada de orçamentos em PDF. Além disso, gerenciei projetos de energia renovável, liderei equipes e otimizei processos com ferramentas tecnológicas."
+    },
+    
+    {
+        "local_titulo": "Geowellex",
+        "local_duracao": "Março de 2017 - Outubro de 2018",
+        "tipo": "trabalho",
+        "cargo_titulo": "Mud Logging/Desenvolvedor de Sistema",
+        "cargo_descricao": "Responsável por desenvolver um sistema web para controle de estoque, utilizando HTML, CSS, JavaScript, MySQL e PHP, o que resultou no aumento da eficiência do gerenciamento de materiais. Em paralelo, atuei na coleta e análise de dados geológicos para otimizar operações de perfuração em campo."
+    },
+    
+    {
+        "local_titulo": "SIG Software e Consultoria em TI",
+        "local_duracao": "Junho de 2016 - Fevereiro de 2017",
+        "tipo": "trabalho",
+        "cargo_titulo": "Desenvolvedor de Sistema",
+        "cargo_descricao": "Foco em desenvolvimento e manutenção evolutiva em sistemas de gestão acadêmica. Desenvolvi novos recursos e funcionalidades no sistema SIGAA, plataforma padrão para diversas universidades federais, utilizando Java, Hibernate, JBoss 4.2.2 e PostgreSQL. O trabalho foi realizado em equipes multidisciplinares, seguindo metodologias ágeis, como Scrum."
+    },
+    
+    {
+        "local_titulo": "ACRUX",
+        "local_duracao": "Fevereiro de 2014 - Janeiro de 2015",
+        "tipo": "trabalho",
+        "cargo_titulo": "Estagiário como Programador de Sistemas",
+        "cargo_descricao": "Finalizei e implementei funcionalidades em software para acompanhamento de calhas em poços de petróleo. As tecnologias utilizadas incluíram Java, H2 Database e NetBeans. O trabalho foi executado em equipes multidisciplinares, utilizando metodologias ágeis como Scrum."
+    }
+]

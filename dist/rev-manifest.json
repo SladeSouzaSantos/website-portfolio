@@ -1,0 +1,23 @@
+{
+  "css/about.css": "css/about-9c6114404c.css",
+  "css/career.css": "css/career-6adb63b492.css",
+  "css/footer.css": "css/footer-ba91944bb8.css",
+  "css/formacao.css": "css/formacao-93388bf125.css",
+  "css/header.css": "css/header-5bd83cc442.css",
+  "css/palletes_color.css": "css/palletes_color-dfb467bda4.css",
+  "css/portfolio.css": "css/portfolio-6915b67844.css",
+  "css/reset.css": "css/reset-6bc915ff2f.css",
+  "css/skills.css": "css/skills-1e17a9372f.css",
+  "css/style.css": "css/style-d6029e0d20.css",
+  "js/background_skills.js": "js/background_skills-44ad2e0cb6.js",
+  "js/button_float.js": "js/button_float-6ad716d023.js",
+  "js/experiencia.js": "js/experiencia-e98540bf7a.js",
+  "js/formacao.js": "js/formacao-8f44c5b994.js",
+  "js/gsap-animations.js": "js/gsap-animations-2b0cdd9b9d.js",
+  "js/lazyload.js": "js/lazyload-2657b46f06.js",
+  "js/portfolio_menu.js": "js/portfolio_menu-d07980e432.js",
+  "js/skills_controller.js": "js/skills_controller-71c7b0d5c2.js",
+  "js/skills_generator.js": "js/skills_generator-3dc4b25385.js",
+  "js/tema.js": "js/tema-c37ff2ac10.js",
+  "js/typed-animations.js": "js/typed-animations-c0a7526431.js"
+}

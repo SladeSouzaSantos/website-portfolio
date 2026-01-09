@@ -29,5 +29,10 @@
     "gulp-sequence": "^0.4.5",
     "gulp-uglify": "^3.0.2",
     "gulp-useref": "^3.0.8"
+  },
+  "overrides": {
+    "inline-source": {
+      "csso": "^5.0.0"
+    }
   }
 }

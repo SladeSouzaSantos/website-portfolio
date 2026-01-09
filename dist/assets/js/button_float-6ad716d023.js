@@ -1,0 +1,1 @@
+function scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}var mybutton=document.getElementById("btnVoltarAoTopo");function scrollFunction(){20<document.body.scrollTop||20<document.documentElement.scrollTop?mybutton.style.display="block":mybutton.style.display="none"}window.onscroll=function(){scrollFunction()};

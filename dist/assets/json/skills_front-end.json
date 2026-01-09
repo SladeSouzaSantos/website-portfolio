@@ -1,0 +1,32 @@
+[
+    {
+        "titulo": "HTML",
+        "percentagem": 90,
+        "idicon": "html",
+        "descricao": "Proficiência em HTML Semântico (HTML5) para garantir a estrutura acessível e otimizada para SEO. Essencial para construir a base de qualquer aplicação Web robusta, priorizando a clareza do código e a interoperabilidade."
+    },
+    {
+        "titulo": "CSS",
+        "percentagem": 85,
+        "idicon": "css",
+        "descricao": "Experiência em CSS3 e pré-processadores (como SASS ou LESS) com foco em design responsivo (Mobile First) e arquitetura de código (BEM ou Atomic Design). Habilidade em criar interfaces elegantes e de alta performance, utilizando técnicas de transição e animação."
+    },
+    {
+        "titulo": "JScript",
+        "percentagem": 80,
+        "idicon": "jscript",
+        "descricao": "Sólido conhecimento de JavaScript moderno (ES6+). Habilidade na manipulação eficiente do DOM, desenvolvimento Front-end interativo e integração com APIs RESTful, aplicando as melhores práticas de código assíncrono."
+    },
+    {
+        "titulo": "TypeScript",
+        "percentagem": 75,
+        "idicon": "typescript",
+        "descricao": "Utilização do TypeScript para garantir a tipagem estática e segurança do código em projetos Front-end e Back-end (Node.js). Essencial para a escalabilidade e manutenção de grandes bases de código, reduzindo erros em tempo de execução."
+    },
+    {
+        "titulo": "Dart",
+        "percentagem": 90,
+        "idicon": "dart",
+        "descricao": "Domínio da linguagem Dart, fundamental para o desenvolvimento de aplicações de alta performance utilizando o framework Flutter. Experiência em desenvolvimento Mobile multi-plataforma, priorizando a arquitetura limpa e o gerenciamento de estado (State Management)."
+    }
+]

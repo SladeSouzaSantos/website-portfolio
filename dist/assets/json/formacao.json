@@ -1,0 +1,49 @@
+[ 
+    {
+        "local_titulo": "UNISUL",
+        "local_duracao": "Julho de 2023 - Atualmente",
+        "tipo": "academia",
+        "cargo_titulo": "Ciência da Computação",
+        "cargo_descricao": "Programa de Bacharelado com foco em fundamentos da computação e desenvolvimento de software moderno. A formação abrange sistemas, segurança e tecnologias emergentes, incluindo: Programação de Soluções Computacionais, Sistemas Distribuídos e Mobile, Inteligência Artificial, Modelagem de Software e Sistemas Computacionais e Segurança."
+    },
+    
+    {
+        "local_titulo": "UNIBF",
+        "local_duracao": "Abril de 2024 - Agosto de 2025",
+        "tipo": "academia",
+        "cargo_titulo": "Tecnólogo em Gestão da Tecnologia da Informação",
+        "cargo_descricao": "Formação técnica e gerencial em TI. O curso inclui competências sólidas em Banco de Dados, Redes e Sistemas Operacionais, além de disciplinas de gestão como Gestão de Projetos (Agile), Segurança da Informação, Inteligência Artificial, Programação Orientada a Objetos, e Testes e Homologação de Software."
+    },
+    
+    {
+        "local_titulo": "ESCOLA POLITÉCNICA BRASILEIRA",
+        "local_duracao": "Outubro de 2020 - Outubro de 2022",
+        "tipo": "academia",
+        "cargo_titulo": "Técnico em Eletrotécnica",
+        "cargo_descricao": "Formação técnica abrangente com foco em projetos, execução, supervisão, inspeção e controle de manutenção em sistemas de instalações elétricas industriais e prediais. Incluiu Fundamentos de Eletricidade, Eletrônica Digital e Analógica, Máquinas Elétricas, Desenho Assistido por Computador, Fundamentos de Automação Industrial e o curso NR 10 - Segurança na Eletricidade."
+    },
+
+    {
+        "local_titulo": "UNYLEYA",
+        "local_duracao": "Setembro de 2018 - Setembro de 2020",
+        "tipo": "academia",
+        "cargo_titulo": "Pós-Graduação em Engenharia Elétrica e de Sistemas de Energia",
+        "cargo_descricao": "Especialização focada na análise e aplicação prática de conceitos de sistemas de energia elétrica. Incluiu disciplinas como Sistemas de Geração e Redes de Distribuição de Energia Elétrica, Componentes de Baixa, Média e Alta Tensão, e o uso da Norma IEC 61850 para Comunicação de Dispositivos em Subestação de Energia."
+    },
+    
+    {
+        "local_titulo": "CTGAS-ER",
+        "local_duracao": "Agosto de 2016 - Setembro de 2017",
+        "tipo": "academia",
+        "cargo_titulo": "Especialização Técnica em Energia Eólica",
+        "cargo_descricao": "Especialização técnica com foco em toda a cadeia de valor da energia eólica. O conteúdo programático abrangeu Fundamentos da Geração Eólica, Medição Anemométrica, Aerodinâmica, Tecnologias em Aerogeradores, Sistemas de Automação, Manutenção de Turbinas Eólicas, e Viabilidade Econômica de Projetos Eólicos."
+    },
+    
+    {
+        "local_titulo": "UnP",
+        "local_duracao": "Fevereiro de 2010 - Fevereiro de 2015",
+        "tipo": "academia",
+        "cargo_titulo": "Engenheiro de Petróleo e Gás",
+        "cargo_descricao": "Graduação com preparação para atuar em toda a cadeia produtiva da indústria de Óleo e Gás. O currículo cobriu desde as etapas iniciais (Geologia do Petróleo e Avaliação de Formações) até a Engenharia de Reservatório, Engenharia de Poços, Processamento Primário, Sistemas Oceânicos e estudo de Terminais e Dutos."
+    }
+]

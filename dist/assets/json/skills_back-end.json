@@ -1,0 +1,38 @@
+[
+    {
+        "titulo": "C",
+        "percentagem": 80,
+        "idicon": "c",
+        "descricao": "Conhecimento em programação de baixo nível, essencial para o entendimento de sistemas operacionais e estruturas de dados. Utilizado para otimizar performance em projetos de alta exigência computacional e em ambientes embarcados, aproveitando a eficiência de memória."
+    },
+    {
+        "titulo": "C++",
+        "percentagem": 85,
+        "idicon": "cplus",
+        "descricao": "Experiência em programação orientada a objetos (POO) com foco em performance e concorrência. Aplicação em desenvolvimento de sistemas complexos, jogos (ou engines) e integração com hardware, valorizando a eficiência de execução e manipulação de memória."
+    },
+    {
+        "titulo": "Java",
+        "percentagem": 95,
+        "idicon": "java",
+        "descricao": "Domínio em desenvolvimento Backend e sistemas corporativos escaláveis. Experiência avançada em Design Patterns e arquiteturas como Domain-Driven Design (DDD) e Clean Architecture, garantindo software robusto, seguro e aderente aos princípios SOLID."
+    },
+    {
+        "titulo": "Python",
+        "percentagem": 80,
+        "idicon": "python",
+        "descricao": "Utilização em análise e processamento de dados (Data Science), automação de tarefas e desenvolvimento de APIs Back-end. Inclui experiência com bibliotecas de Machine Learning/IA, refletindo a aplicação do conhecimento da Pós-Graduação."
+    },
+    {
+        "titulo": "Node.js",
+        "percentagem": 75,
+        "idicon": "nodejs",
+        "descricao": "Habilidade em construir aplicações Back-end e APIs RESTful de alta velocidade e escalabilidade, utilizando o modelo assíncrono e não-bloqueante do JavaScript. Ideal para microserviços e aplicações em tempo real."
+    },
+    {
+        "titulo": "PHP",
+        "percentagem": 80,
+        "idicon": "php",
+        "descricao": "Experiência sólida em desenvolvimento Web Back-end. Utilização para a criação e manutenção de sistemas dinâmicos, integração com bases de dados e desenvolvimento de módulos customizados para plataformas CMS como o WordPress."
+    }
+]

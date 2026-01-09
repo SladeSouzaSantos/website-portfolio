@@ -1,0 +1,117 @@
+[ 
+    {
+        "id": "siberian_web_solutions",
+        "titulo": "Siberian Web Solutions",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "siberianwebsolutions-website.webp",
+        "linguagens": ["wordpress"],
+        "icon_acess": "website",
+        "site": "https://siberianwebsolutions.com",
+        "descricao": "Criação de um website institucional completo para a empresa Siberian Web Solutions, com foco em design responsivo e otimização para motores de busca (SEO). O site utiliza a plataforma WordPress para facilitar a gestão de conteúdo pelo cliente."
+    },
+    {
+        "id": "greencity_solutions",
+        "titulo": "Greencity Solutions",
+        "categoria": "APPs",
+        "tipo": "app",
+        "imagem": "greencity-solutions.webp",
+        "linguagens": ["flutter", "dart", "sql"],
+        "icon_acess": "app-mobile",
+        "site": "",
+        "descricao": "Desenvolvimento de um aplicativo móvel (Android/iOS) para dimensionamento de sistemas fotovoltaicos. O app permite aos vendedores calcular a capacidade necessária, gerar orçamentos automáticos e gerenciar propostas de forma eficiente. Construído com Flutter, Dart e integração com banco de dados SQL."
+    },
+    {
+        "id": "greencity_erp",
+        "titulo": "ERP Greencity",
+        "categoria": "SISTEMA DE GESTÃO (ERP)",
+        "tipo": "pc",
+        "imagem": "erp.webp",
+        "linguagens": ["typescript", "nodejs", "postgresql", "docker", "python"],
+        "icon_acess": "website",
+        "site": "https://erp.phasscode.com",
+        "descricao": "Desenvolvimento de um ecossistema ERP completo para a Greencity. O sistema conta com uma arquitetura robusta separando Front-end (React) e Back-end (Django Rest Framework), conteinerização com Docker e deploy automatizado em infraestrutura própria. Inclui módulos de gestão de funcionários, controle de permissões de acesso e integração com banco de dados relacional."
+    },
+    {
+        "id": "greencity_sustainable_energy",
+        "titulo": "Greencity Sustainable Energy",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "greencity-website.webp",
+        "linguagens": ["wordpress", "php"],
+        "icon_acess": "website",
+        "site": "",
+        "descricao": "Website institucional e de vendas para empresa de energia fotovoltaica. Utilizado para captação de leads e apresentação de serviços. Implementação com WordPress e PHP para funcionalidades customizadas de contato e orçamento."
+    },
+    {
+        "id": "sigaa_esig",
+        "titulo": "Sistema Integrado de Gestão de Atividades Acadêmicas (SIGAA)",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "sigaa.webp",
+        "linguagens": ["postgresql", "hibernate", "java", "jboss"],
+        "icon_acess": "website",
+        "site": "",
+        "descricao": "Participação no desenvolvimento de um dos maiores sistemas de gestão acadêmica do Brasil (utilizado por universidades federais). Minha atuação focou no desenvolvimento de novas funcionalidades em Java (POO) e PostgreSQL, seguindo os princípios de Design Patterns. Atuei diretamente na garantia de qualidade, realizando testes funcionais e manuais das novas features implementadas, além da documentação técnica das alterações."
+    },
+    {
+        "id": "resergas",
+        "titulo": "ReserGas",
+        "categoria": "APPs",
+        "tipo": "app",
+        "imagem": "resergas.webp",
+        "linguagens": ["dart", "flutter"],
+        "icon_acess": "github",
+        "site": "https://github.com/SladeSouzaSantos/reser_gas",
+        "descricao": "Desenvolvimento de um aplicativo móvel cross-platform com Flutter e Dart para engenheiros de reservatórios. O foco principal é no cálculo e dimensionamento de reservatórios de Gás (como o Cálculo do Fator de Compressibilidade do Gás), utilizando a capacidade de Dart para lógica complexa e Flutter para uma interface de usuário responsiva e acessível em múltiplos dispositivos. Este projeto é um excelente exemplo da aplicação de programação orientada a objetos (POO) para resolver problemas complexos de Engenharia de Domínio."
+    },
+
+    {
+        "id": "monibank",
+        "titulo": "Monibank (Validação de Formulários)",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "monibank.webp",
+        "linguagens": ["html", "css", "jscript"],
+        "icon_acess": "website",
+        "site": "https://phasscode.com/projetos/monibank/",
+        "descricao": "Simulação de página bancária focada na validação de formulários. Implementação de lógica JavaScript para validação de CPF e data de nascimento (maioridade), utilizando o atributo 'data-attribute' para exibir mensagens de erro personalizadas."
+    },
+
+    {
+        "id": "mochila_js",
+        "titulo": "Mochila JS (Local Storage)",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "mochila_js.webp",
+        "linguagens": ["html", "css", "jscript"],
+        "icon_acess": "website",
+        "site": "https://phasscode.com/projetos/mochila_local_storage_js/",
+        "descricao": "Um aplicativo de lista de itens persistente (to-do list/mochila) que utiliza o Local Storage do navegador para salvar os dados. O projeto demonstra o uso de JavaScript para manipulação dinâmica do DOM, gerenciamento de eventos e persistência de dados no Front-End."
+    },
+
+    {
+        "id": "n_secreto",
+        "titulo": "Jogo do Número Secreto",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "n_secreto.webp",
+        "linguagens": ["html", "css", "jscript"],
+        "icon_acess": "website",
+        "site": "https://phasscode.com/projetos/n_secreto/",
+        "descricao": "Um jogo simples de adivinhação que utiliza a Web Speech API do JavaScript para reconhecimento e síntese de voz. O projeto demonstra a integração do navegador com hardware e a implementação de lógica de jogo com feedback visual e sonoro."
+    },
+
+    {
+        "id": "teclado_som",
+        "titulo": "Teclado de Som",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "teclado_som.webp",
+        "linguagens": ["html", "css", "jscript"],
+        "icon_acess": "website",
+        "site": "https://phasscode.com/projetos/teclado_som/",
+        "descricao": "Um teclado interativo que dispara diferentes sons ao ser clicado ou ao ter as teclas do teclado físico pressionadas. O projeto enfatiza o manuseio de eventos de clique e teclado e a manipulação da Web Audio API para reprodução de áudio."
+    }
+    
+]

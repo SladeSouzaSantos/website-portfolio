@@ -30,7 +30,10 @@ gulp.task('minify-js', function() {
 
 gulp.task('minify-css', function() {
   return gulp.src('build-website/**/*.css')
-    .pipe($.cssnano({safe: true}))
+    .pipe($.cssnano({
+        safe: true,
+        mergeRules: false 
+    }))
     .pipe(gulp.dest('dist/'))
 });
 
@@ -46,10 +49,28 @@ gulp.task('minify-html', function() {
 gulp.task('useref', function () {
     return gulp.src('build-website/index.html')
         .pipe($.useref())
-        .pipe($.if('*.html', $.inlineSource()))
-        .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
-        .pipe($.if('*.js', $.uglify()))
-        .pipe($.if('*.css', $.cssnano({safe: true})))
+        .pipe($.if('*.html', $.inlineSource({ compress: true })))
+        .pipe($.if('*.html', $.htmlmin({
+            collapseWhitespace: true,
+            removeComments: true,
+            ignoreCustomFragments: [ /<%[\s\S]*?%>/, /<\?[\s\S]*?\?>/ ] // Evita quebra em códigos injetados
+        })))
+        /* JS: Configurado para ser mais tolerante com caracteres especiais */
+        .pipe($.if('*.js', $.uglify({
+            compress: {
+                drop_console: true
+            },
+            output: {
+                ascii_only: true // Evita erro com caracteres como o '+' do C++ ou símbolos de ícones
+            }
+        })))
+        /* CSS: Desativando 'mergeRules' para evitar o erro de 'property 0 of undefined' */
+        .pipe($.if('*.css', $.cssnano({
+            safe: true,
+            mergeRules: false, // OBRIGATÓRIO: Impede que o minificador tente reestruturar seletores complexos
+            reduceIdents: false, // Evita que ele renomeie seus Keyframes de animação
+            zindex: false        // Impede que ele altere a ordem dos seus z-index
+        })))
         .pipe(gulp.dest('dist'));
 });
 
