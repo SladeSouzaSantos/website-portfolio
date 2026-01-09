@@ -255,14 +255,24 @@
 /* Cores dos cards */
 .skill-background-front-end {
     border-radius: 10px 0px 0px 10px;
-    background: #f7a01f; 
+    background: #C68B59; /* Bronze Suave (Substitui o Laranja vibrante) */
 }
-.skill-background-back-end  { background: #10b981; }
-.skill-background-database  { background: #06b6d4; }
-.skill-background-framework { background: #a855f7; }
+
+.skill-background-back-end { 
+    background: #5E9B82; /* Verde Sálvia (Substitui o Esmeralda vibrante) */
+}
+
+.skill-background-database { 
+    background: #5A9BB3; /* Azul Petróleo Médio (Substitui o Ciano vibrante) */
+}
+
+.skill-background-framework { 
+    background: #8E7BB0; /* Ametista Desaturada (Substitui o Roxo vibrante) */
+}
+
 .skill-background-tools {
     border-radius: 0px 10px 10px 0px;
-    background: #3b82f6;
+    background: #6D87B3; /* Azul Acinzentado (Substitui o Azul Royal vibrante) */
 }
 
 /* ==========================================================================
