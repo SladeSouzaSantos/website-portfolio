@@ -1,1 +1,0 @@
-gsap.registerPlugin(ScrollTrigger);var headerTimeline=gsap.timeline();headerTimeline.from(".header__navegation__link",{opacity:0,y:-20,duration:.9,stagger:.05,ease:"power1.out",delay:0});

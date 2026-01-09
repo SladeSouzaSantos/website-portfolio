@@ -1,5 +1,5 @@
 /**
- * SKILLS CONTROLLER - Escala 0.8 / Sem Zoom Individual
+ * SKILLS CONTROLLER - Escala controlada via CSS
  */
 document.addEventListener('DOMContentLoaded', () => {
     // === 1. CONFIGURAÇÕES E ESTADOS ===
@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const SPAN_SELECTOR = '#main-typed-span';
     const SOBRE_MIM_SELECTOR = '#typed-output';
     const CIRCLE_SELECTOR = '.skills-container';
-    const BASE_SCALE = 1.2;
     
     let typedData = {
         instance: null,      
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // === 3. FUNÇÕES AUXILIARES (ZOOM REMOVIDO) ===
+    // === 3. FUNÇÕES AUXILIARES ===
     function escapeTypedString(str) { 
         return str.replace(/&/g, '&amp;'); 
     }
@@ -78,13 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById(LIST_ID);
         if (!container) return;
 
-        // Apenas remove a classe, sem animar escala
         const prev = container.querySelector('.skill-highlight');
         if (prev) {
             prev.classList.remove('skill-highlight');
         }
 
-        // Apenas adiciona a classe para efeitos de cor (CSS), sem zoom
         if (skillTitle) {
             const el = container.querySelector(`.skill-${getSkillClassSelector(skillTitle)}`);
             if (el) {
@@ -103,8 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
             loop: isLoop,
             showCursor: true,
             cursorChar: '_',
-            onStringTyped: (arrayPos, self) => {
+            // DISPARA ANTES DE COMEÇAR A ESCREVER
+            preStringTyped: (arrayPos, self) => {
                 if (isLoop) {
+                    // Pega a string que vai ser escrita e limpa o escape de caractere
                     const title = self.strings[arrayPos].replace(/&amp;/g, '&');
                     highlightSkillIcon(title);
                 }
@@ -112,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // === 4. CARREGAMENTO DE CATEGORIA COM ESCALA 0.8 ===
+    // === 4. CARREGAMENTO DE CATEGORIA (SEM ESCALA NO GSAP) ===
     async function loadCategory(jsonPath, title, color) {
         const circle = document.querySelector(CIRCLE_SELECTOR);
         const rotatingBorder = document.querySelector('.skills-rotating-border');
@@ -123,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gsap.to(circle, {
             opacity: 0,
-            scale: BASE_SCALE * 0.8,
             duration: 0.2,
             ease: "power2.in",
             onComplete: async () => {
@@ -167,12 +165,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     gsap.to(circle, {
                         opacity: 1,
-                        scale: BASE_SCALE,
                         duration: 0.5,
-                        ease: "back.out(1.7)"
+                        ease: "power2.out"
                     });
                 } catch (e) {
-                    gsap.to(circle, { opacity: 1, scale: BASE_SCALE });
+                    gsap.to(circle, { opacity: 1 });
                 }
             }
         });

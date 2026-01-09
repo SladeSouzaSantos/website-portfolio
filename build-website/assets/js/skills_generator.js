@@ -149,9 +149,11 @@ class SkillsGenerator {
  * @param {string} skillJsonString String JSON contendo os dados da skill (escapada).
  */
 window.abrirModalSkill = function(skillJsonString) {
-    
     const skill = JSON.parse(skillJsonString.replace(/&quot;/g, '"')); 
     
+    // CAPTURAR A COR ATIVA: Pegamos a cor de fundo do círculo atual
+    const corAtiva = document.querySelector('.skills-container').style.backgroundColor;
+
     const modalExistente = document.querySelector('.modal__overlay');
     if (modalExistente) {
         modalExistente.remove();
@@ -159,16 +161,16 @@ window.abrirModalSkill = function(skillJsonString) {
     
     const modalContent = `
         <div class="modal__overlay" onclick="fecharModalSkill()">
-            <div class="modal__content" onclick="event.stopPropagation()">
+            <div class="modal__content" style="background-color: ${corAtiva}; border: 2px solid rgba(255,255,255,0.2);" onclick="event.stopPropagation()">
                 <button class="modal__close-button" onclick="fecharModalSkill()">×</button>
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px; border-bottom: 2px solid var(--md-sys-color-on-surface-variant); padding-bottom: 10px">
-                    <svg class="skills__icons__about on-secondary-container-filter" role="img" aria-label="${skill.titulo}">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px; border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 10px">
+                    <svg class="skills__icons__about" style="fill: white; width: 40px; height: 40px;" role="img" aria-label="${skill.titulo}">
                         <use xlink:href="assets/img/icons.svg#${skill.idicon}"/>
                     </svg>
-                    <h3 class="modal__title on-secondary-container-text" style="border-bottom: none; margin-bottom: 0px; padding-bottom: 0px">${skill.titulo}</h3>
+                    <h3 class="modal__title" style="color: white; border-bottom: none; margin-bottom: 0px; padding-bottom: 0px">${skill.titulo}</h3>
                 </div>
-                <p class="modal__description">${skill.descricao || 'Nenhuma descrição detalhada fornecida.'}</p>                
-                </div>
+                <p class="modal__description" style="color: white;">${skill.descricao || 'Nenhuma descrição detalhada fornecida.'}</p>                
+            </div>
         </div>
     `;
     
