@@ -134,7 +134,7 @@
    ========================================================================== */
 .skills-nav-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -178,42 +178,46 @@
    ========================================================================== */
 .skill-card {
     display: flex;
-    flex-direction: row;
-    padding: 20px 0px 20px 0px;
-    min-height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px 0px 20px;
+    min-width: 376px;
     cursor: pointer;
     opacity: 0.8;
 }
 
 .skill-card.active {
     opacity: 1;
-    padding: 20px 20px 20px 0px;
+    min-height: 152px;
+    padding: 0px 20px 20px 20px;
+    justify-content: start;
 }
 
 .skill-card.active .card-list-preview{
     list-style: none;
     padding: 0; margin: 0;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
     font-size: 0.9rem;
 }
 
 .skill-card.active .card-header{
-    border-right: 2px solid var(--md-sys-color-on-secondary-container); /* A LINHA VERTICAL */
-    margin-right: 8px;
+    border-bottom: 2px solid var(--md-sys-color-on-secondary-container);
+    margin-bottom: 16px;
+    width: 100%;
 }
 
 .card-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px 10px;
+    padding: 10px 10px;
 }
 
 .card-header h3 {
-    writing-mode: vertical-rl; 
-    transform: rotate(180deg); /* Ajusta a direção da leitura de baixo para cima */
     white-space: nowrap;
     font-size: 1rem;
     font-weight: 900;
@@ -229,6 +233,7 @@
 .card-list-preview li{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .card-list-preview li::before {
@@ -254,7 +259,7 @@
 
 /* Cores dos cards */
 .skill-background-front-end {
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 10px 0px 0px;
     background: #C68B59; /* Bronze Suave (Substitui o Laranja vibrante) */
 }
 
@@ -271,13 +276,70 @@
 }
 
 .skill-background-tools {
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 0px 10px 10px;
     background: #6D87B3; /* Azul Acinzentado (Substitui o Azul Royal vibrante) */
 }
 
 /* ==========================================================================
    7. RESPONSIVIDADE
    ========================================================================== */
+@media (max-width: 890px) {
+    .skills-layout-wrapper{
+        gap: 24px;
+    }
+
+    .skills-nav-container {
+        flex-direction: row; /* Volta a ser fileira */
+    }
+
+    .skill-card {
+        flex-direction: row; /* Header e Lista lado a lado */
+        padding: 20px 0;
+        min-height: 200px;
+        min-width: auto; /* Reseta a largura fixa */
+    }
+
+    .skill-card.active {
+        padding: 20px 20px 20px 0;
+        min-width: 200px;
+    }
+
+    /* Grid de 1 coluna no Mobile/Tablet */
+    .skill-card.active .card-list-preview {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        height: 100%;
+        align-items: center;
+    }
+
+    .card-header {
+        flex-direction: row;
+        padding: 15px 10px;
+    }
+
+    /* Ativa o texto em pé (Vertical Writing) */
+    .card-header h3 {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        min-height: 200px;
+        text-align: center;
+    }
+
+    .skill-card.active .card-header {
+        border-bottom: none;
+        border-right: 2px solid var(--md-sys-color-on-secondary-container);
+        margin-bottom: 0;
+        margin-right: 8px;
+        width: auto;
+    }
+
+    /* Bordas Mobile (Horizontal) */
+    .skill-background-front-end { border-radius: 10px 0 0 10px; }
+    .skill-background-back-end  { border-radius: 0; }
+    .skill-background-database  { border-radius: 0; }
+    .skill-background-framework { border-radius: 0; }
+    .skill-background-tools     { border-radius: 0 10px 10px 0; }
+}
 
 @media (max-width: 681px) {
     #habilidades { padding: 6% 0; }
