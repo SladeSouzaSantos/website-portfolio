@@ -6,7 +6,8 @@ var $ = require('gulp-load-plugins')({rename: {'gulp-rev-delete-original':'revde
 /* Tasks base */
 gulp.task('copy', function() {
     return gulp.src([
-      'build-website/assets/{img,fonts}/**/*', 
+      'build-website/assets/img/**/*',
+      'build-website/assets/fonts/**/*',
       'build-website/libs/**/*',
       'build-website/assets/json/**/*'
     ], {base: 'build-website'})
@@ -22,14 +23,14 @@ gulp.task('clean', function() {
 
 /* Minificação */
 gulp.task('minify-js', function() {
-  return gulp.src('build-website/assets/js/*.js')
+  return gulp.src('build-website/assets/js/**/*.js')
   .pipe($.babel({presets: ['@babel/env']}))
     .pipe($.uglify())
     .pipe(gulp.dest('dist/assets/js/'))
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('build-website/**/*.css')
+  return gulp.src('build-website/**/*.css',{base: 'build-website'})
     .pipe($.cssnano({
         safe: true,
         mergeRules: false 
@@ -47,7 +48,7 @@ gulp.task('minify-html', function() {
 
 /* Concatenação */
 gulp.task('useref', function () {
-    return gulp.src('build-website/index.html')
+    return gulp.src('build-website/*.html')
         .pipe($.useref())
         .pipe($.if('*.html', $.inlineSource({ compress: true })))
         .pipe($.if('*.html', $.htmlmin({
@@ -78,7 +79,7 @@ gulp.task('useref', function () {
 
 /* Imagens */
 gulp.task('imagemin', function() {
-    return gulp.src('build-website/assets/img/*')
+    return gulp.src('build-website/assets/img/**/*', {base: 'build-website'})
         .pipe($.imagemin({
             progressive: true,
             svgoPlugins: [
@@ -86,7 +87,7 @@ gulp.task('imagemin', function() {
                 {cleanupIDs: false}
             ]
         }))
-        .pipe(gulp.dest('dist/assets/img'));
+        .pipe(gulp.dest('dist'));
 });
 
 
@@ -102,7 +103,7 @@ gulp.task('rev', function(){
 })
 
 gulp.task('revreplace', ['rev'], function(){
-  return gulp.src(['dist/index.html', 'dist/**/*.css'])
+  return gulp.src(['dist/*.html', 'dist/**/*.css'])
     .pipe($.revReplace({
         manifest: gulp.src('dist/rev-manifest.json'),
         replaceInExtensions: ['.html', '.js', '.css']
