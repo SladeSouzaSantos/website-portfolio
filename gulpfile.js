@@ -48,7 +48,7 @@ gulp.task('minify-html', function() {
 
 /* Concatenação */
 gulp.task('useref', function () {
-    return gulp.src('build-website/*.html')
+    return gulp.src('build-website/**/*.html', {base: 'build-website'})
         .pipe($.useref())
         .pipe($.if('*.html', $.inlineSource({ compress: true })))
         .pipe($.if('*.html', $.htmlmin({
@@ -103,7 +103,7 @@ gulp.task('rev', function(){
 })
 
 gulp.task('revreplace', ['rev'], function(){
-  return gulp.src(['dist/*.html', 'dist/**/*.css'])
+  return gulp.src(['dist/**/*.html', 'dist/**/*.css'])
     .pipe($.revReplace({
         manifest: gulp.src('dist/rev-manifest.json'),
         replaceInExtensions: ['.html', '.js', '.css']
