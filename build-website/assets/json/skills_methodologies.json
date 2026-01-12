@@ -1,0 +1,26 @@
+[
+    {
+        "titulo": "Scrum",
+        "percentagem": 90,
+        "idicon": "scrum",
+        "descricao": "Experiência em metodologias ágeis, atuando em ciclos de entrega iterativos (Sprints) e foco em melhoria contínua."
+    },
+    {
+        "titulo": "Clean Code",
+        "percentagem": 95,
+        "idicon": "clean-code",
+        "descricao": "Aplicação de técnicas de escrita de código expressivo, focando em nomes significativos, funções pequenas e ausência de efeitos colaterais. Priorizo a legibilidade do código para reduzir a carga cognitiva da equipe e facilitar a manutenção sustentável."
+    },
+    {
+        "titulo": "Clean Architecture",
+        "percentagem": 90,
+        "idicon": "clean-arch",
+        "descricao": "Domínio na estruturação de software seguindo a separação de preocupações (SoC). Foco na criação de sistemas independentes de frameworks, bancos de dados ou agentes externos, facilitando a testabilidade e a evolução tecnológica a longo prazo."
+    },
+    {
+        "titulo": "SOLID",
+        "percentagem": 95,
+        "idicon": "solid",
+        "descricao": "Aplicação rigorosa dos cinco princípios de design orientado a objetos para garantir um código limpo, extensível e de fácil manutenção. Especialista em reduzir o acoplamento e maximizar a coesão em bases de código complexas."
+    }
+]
