@@ -126,6 +126,11 @@
     animation-delay: 0.3s; 
 }
 
+.about__icons {
+    fill: var(--md-sys-color-on-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}
+
 .job-badge {
     display: inline-block;
     padding: 4px 12px;

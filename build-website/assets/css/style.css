@@ -62,21 +62,32 @@ h2{
     position: fixed; 
     bottom: 20px;
     right: 30px;
-    display: none;
+    /* REMOVA O DISPLAY: NONE DAQUI */
     background-color: var(--md-sys-color-accent);
     color: var(--md-sys-color-on-accent);
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 15px 15px;
-    border-radius: 25px;
-    font-size: 18px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
     width: 50px;
+    height: 50px; /* Garante que seja um círculo perfeito */
+    border-radius: 50%; /* 50% é melhor para círculos que 25px */
+    font-size: 18px;
     z-index: 1000;
+
+    /* Estado Inicial (Escondido e Suave) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); 
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#btnVoltarAoTopo.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 #btnVoltarAoTopo:hover {
     opacity: 1;
+    transform: scale(1.1); /* Um leve feedback ao passar o mouse */
 }

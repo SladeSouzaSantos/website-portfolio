@@ -1,76 +1,70 @@
 /* ==========================================================================
    1. ANIMAÇÕES E TRANSIÇÕES BASE
    ========================================================================== */
+
 @keyframes fadeInScale {
     from { opacity: 0; transform: scale(0.9); }
     to   { opacity: 1; transform: scale(1); }
 }
 
-.skill-node-item, .skill-content, .skill-icon, 
-.skill-nav, .skill-card, .skills__icons__about {
+.skill-node-item, .skill-content, .skill-icon, .skills__icons__about  {
     transition: all 0.3s ease-in-out;
-}
+} 
 
 .skill-node-item, .skill-content, .skill-icon, 
-.skills-group-radial, .floating-code-word {
+.skills-group-radial {
     will-change: transform, opacity;
 }
 
 /* ==========================================================================
-   2. SEÇÃO HABILIDADES E FUNDO FLUTUANTE
+   2. LAYOUT PRINCIPAL (WRAPPER E CONTAINERS)
    ========================================================================== */
-#habilidades {
-    position: relative;
-    overflow: hidden;
-    min-height: 400px;
-}
 
-#floating-code-container {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.floating-code-word {
-    position: absolute;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--md-sys-color-on-surface);
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    filter: blur(0.5px);
-}
-
-/* ==========================================================================
-   3. LAYOUT PRINCIPAL (WRAPPER E CONTAINERS)
-   ========================================================================== */
 .skills-layout-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 20px 20px;
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
-    padding: 0;
+    padding-top: 100px;
     align-items: center;
     justify-content: space-evenly;
-    margin: 48px 0 24px;
     font-family: 'Fira Mono', 'Courier New', monospace;
     z-index: 1;
     overflow: visible;
 }
 
-.skills-container-limit {
+/*.skills-container-limit {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 300px;
-    width: 300px;
-    padding: 48px;
-    margin-top: 24px;
-    overflow: visible;
+    width: 224px;
+    height: 224px;
+    position: relative;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: transform 0.3s ease;
+}*/
+
+.skills-container-limit {
+    display: flex;
+    flex-direction: column; /* Alinha título em cima e círculo embaixo */
+    justify-content: flex-start; /* Começa do topo */
+    align-items: center;
+    width: 212px;  /* Aumentei um pouco para acomodar melhor */
+    height: 252px; /* Altura maior para caber o título e o círculo */
+    position: relative;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: transform 0.3s ease;
+    padding: 20px; /* Espaçamento interno */
+    /*box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);*/
+}
+
+.skills-container-limit:hover {
+    transform: translateY(-10px);
 }
 
 .skills-container {
@@ -80,14 +74,31 @@
     border-radius: 50%;
     z-index: 10;
     opacity: 0.9;
-    margin-left: -5px;
-    transform: scale(1.2);
+    margin-left: -3px;
+    transform: scale(0.65);
     transform-origin: center center;
 }
 
+.skill-block-header {
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.skill-block-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* A cor pode ser herdada ou forçada via JS se quiser */
+}
+
 /* ==========================================================================
-   4. CÍRCULO RADIAL E NÓ CENTRAL
+   3. CÍRCULO RADIAL E NÓ CENTRAL
    ========================================================================== */
+
 .skills-group-radial {
     list-style: none;
     padding: 0; margin: 0;
@@ -127,26 +138,27 @@
     align-items: center;
     justify-content: center;
     z-index: 50;
+    transition: transform 0.3s ease, filter 0.3s ease, background-color 0.3s ease;
+    filter: brightness(0.9);
 }
 
-/* ==========================================================================
-   5. NAVEGAÇÃO E ESTADOS ATIVOS
-   ========================================================================== */
-.skills-nav-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+.text-skill-center, .skills__title {
+    text-align: center;
 }
 
-.skill-nav {
-    opacity: 0.6;
-    border-bottom: 2px solid transparent;
+.skills__title{
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    padding: 0 48px;
 }
 
-.skill-nav.active {
-    opacity: 1;
-    font-weight: bold;
+.skills__typed-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0 48px;
+    text-align: center;
 }
 
 .skill-icon {
@@ -157,194 +169,61 @@
 .skills__icons__about {
     width: 40px;
     height: 40px;
-} 
+}
 
-.card-icon {
-    width: 24px;
-    height: 24px;
-    filter: var(--md-sys-color-on-secondary-container-filter);
+.skill-icon, .skill-node-item{    
+    fill: var(--md-sys-color-on-secondary);
+     color: var(--md-sys-color-on-secondary);
 }
 
 .skill-node-item.skill-highlight .skill-icon {
-    filter: var(--md-sys-color-surface-filter);
-}
-
-.skill-node-item.skill-highlight .skill-content {
-    opacity: 0.975;
-}
-
-/* ==========================================================================
-   6. CARDS DE CATEGORIA
-   ========================================================================== */
-.skill-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 20px 0px 20px;
-    min-width: 376px;
-    cursor: pointer;
-    opacity: 0.8;
-}
-
-.skill-card.active {
-    opacity: 1;
-    min-height: 152px;
-    padding: 0px 20px 20px 20px;
-    justify-content: start;
-}
-
-.skill-card.active .card-list-preview{
-    list-style: none;
-    padding: 0; margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 12px;
-    font-size: 0.9rem;
-}
-
-.skill-card.active .card-header{
-    border-bottom: 2px solid var(--md-sys-color-on-secondary-container);
-    margin-bottom: 16px;
-    width: 100%;
-}
-
-.card-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 10px;
-}
-
-.card-header h3 {
-    white-space: nowrap;
-    font-size: 1rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+     fill: var(--md-sys-color-on-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
 }
 
-.card-list-preview {
-    display: none;
+.skill-node-item.skill-highlight .skill-content {
+    filter: brightness(1.2); /* Dá um boost na cor de fundo */
+    transform: scale(1.1);
+    border-color: #fff !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    opacity: 0.975;
 }
 
-.card-list-preview li{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+@media(max-width: 1832px) {
+    .skills-layout-wrapper {
+        max-width: 80%;
+    }
 }
 
-.card-list-preview li::before {
-    content: "";
-    margin-right: 10px;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    background: currentColor;
-    display: none !important;
+@media(max-width: 1517px) {
+    .skills-layout-wrapper {
+        max-width: 100%;
+    }
 }
 
-.skill-li-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;  /* Tamanho fixo para não quebrar o alinhamento */
-    height: 20px;
-    flex-shrink: 0;
-    margin-right: 12px; /* Espaçamento entre ícone e texto */
-    filter: var(--md-sys-color-on-secondary-container-filter);
-}
-
-/* Cores dos cards */
-.skill-background-front-end {
-    border-radius: 10px 10px 0px 0px;
-    background: #C68B59; /* Bronze Suave (Substitui o Laranja vibrante) */
-}
-
-.skill-background-back-end { 
-    background: #5E9B82; /* Verde Sálvia (Substitui o Esmeralda vibrante) */
-}
-
-.skill-background-database { 
-    background: #5A9BB3; /* Azul Petróleo Médio (Substitui o Ciano vibrante) */
-}
-
-.skill-background-framework { 
-    background: #8E7BB0; /* Ametista Desaturada (Substitui o Roxo vibrante) */
-}
-
-.skill-background-tools {
-    border-radius: 0px 0px 10px 10px;
-    background: #6D87B3; /* Azul Acinzentado (Substitui o Azul Royal vibrante) */
-}
-
-/* ==========================================================================
-   7. RESPONSIVIDADE
-   ========================================================================== */
-@media (max-width: 890px) {
-    .skills-layout-wrapper{
-        gap: 24px;
+@media(max-width: 595px) {
+    .skills-container-limit {
+        width: 100%;
+        height: 352px;
+        background: none;
     }
 
-    .skills-nav-container {
-        flex-direction: row; /* Volta a ser fileira */
+    .skills-container {
+        transform: scale(1.1);
     }
 
-    .skill-card {
-        flex-direction: row; /* Header e Lista lado a lado */
-        padding: 20px 0;
-        min-height: 200px;
-        min-width: auto; /* Reseta a largura fixa */
+    .skill-block-header {
+        display: none;
     }
 
-    .skill-card.active {
-        padding: 20px 20px 20px 0;
-        min-width: 200px;
+    .skills__title {
+        display: inline;
+        font-size: 1.4rem;
     }
-
-    /* Grid de 1 coluna no Mobile/Tablet */
-    .skill-card.active .card-list-preview {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        height: 100%;
-        align-items: center;
-    }
-
-    .card-header {
-        flex-direction: row;
-        padding: 15px 10px;
-    }
-
-    /* Ativa o texto em pé (Vertical Writing) */
-    .card-header h3 {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        min-height: 200px;
-        text-align: center;
-    }
-
-    .skill-card.active .card-header {
-        border-bottom: none;
-        border-right: 2px solid var(--md-sys-color-on-secondary-container);
-        margin-bottom: 0;
-        margin-right: 8px;
-        width: auto;
-    }
-
-    /* Bordas Mobile (Horizontal) */
-    .skill-background-front-end { border-radius: 10px 0 0 10px; }
-    .skill-background-back-end  { border-radius: 0; }
-    .skill-background-database  { border-radius: 0; }
-    .skill-background-framework { border-radius: 0; }
-    .skill-background-tools     { border-radius: 0 10px 10px 0; }
 }
 
-@media (max-width: 681px) {
-    #habilidades { padding: 6% 0; }
-}
-
-@media (max-width: 420px) {
-    .skills-container { transform: scale(1, 1) }
+@media(max-width: 595px) {
+    .skills-container {
+        transform: scale(1.0);
+    }
 }

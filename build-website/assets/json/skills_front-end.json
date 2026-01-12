@@ -12,7 +12,7 @@
         "descricao": "Experiência em CSS3 e pré-processadores (como SASS ou LESS) com foco em design responsivo (Mobile First) e arquitetura de código (BEM ou Atomic Design). Habilidade em criar interfaces elegantes e de alta performance, utilizando técnicas de transição e animação."
     },
     {
-        "titulo": "JScript",
+        "titulo": "JavaScript",
         "percentagem": 80,
         "idicon": "jscript",
         "descricao": "Sólido conhecimento de JavaScript moderno (ES6+). Habilidade na manipulação eficiente do DOM, desenvolvimento Front-end interativo e integração com APIs RESTful, aplicando as melhores práticas de código assíncrono."

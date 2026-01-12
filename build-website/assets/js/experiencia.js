@@ -30,7 +30,7 @@
                     </div>
                     <div class="experiencia__linha-historica-container">
                         <div class="experiencia__linha-historica"></div>
-                        <svg  class="experiencia__icons" role="img"><use class="on-surface-filter" xlink:href="assets/img/icons.svg#${experiencia.tipo}" /></svg>                             
+                        <svg  class="experiencia__icons" role="img"><use xlink:href="assets/img/icons.svg#${experiencia.tipo}" /></svg>                             
                     </div>
                     <div class="experiencia__cargo-container" ${styleUltimoContainer}>
                         <h3 class="experiencia__cargo-titulo">${experiencia.cargo_titulo}</h3>
@@ -43,7 +43,7 @@
                 <div class="experiencia__container__historico">
                     <div class="experiencia__linha-historica-container">
                         <div class="experiencia__linha-historica"></div>
-                        <svg  class="experiencia__icons" role="img"><use class="on-surface-filter" xlink:href="assets/img/icons.svg#${experiencia.tipo}" /></svg>                             
+                        <svg  class="experiencia__icons" role="img"><use xlink:href="assets/img/icons.svg#${experiencia.tipo}" /></svg>                             
                     </div>
                     <div class="experiencia__container-mobile-view">
                         <div class="experiencia__local-container">

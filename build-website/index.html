@@ -36,7 +36,7 @@
                 <nav class="header__navegation">                
                     <a class="header__navegation__link on-surface-text" href="#home">Home</a>
                     <a class="header__navegation__link on-surface-text" href="#sobre-mim">Sobre mim</a>
-                    <a class="header__navegation__link on-surface-text" href="#habilidades">Habilidades</a>
+                    <a class="header__navegation__link on-surface-text" href="#skills">Habilidades</a>
                     <a class="header__navegation__link on-surface-text" href="#portfolio">Portfólio</a>
                     <a class="header__navegation__link on-surface-text" href="#experiencia">Experiência</a>
                     <a class="header__navegation__link on-surface-text" href="#formacao">Formação</a>
@@ -62,19 +62,19 @@
                         </h4>
                         <div class="about__perfil-social-media">
                             <a href="https://wa.me/+5584991730465?text=Ol%C3%A1%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." class="zoom">
-                                <svg class="about__icons on-secondary-container-filter" role="img" aria-label="Fale comigo, pelo Whatsapp"><use xlink:href="assets/img/icons.svg#whatsapp2" /></svg>
+                                <svg class="about__icons" role="img" aria-label="Fale comigo, pelo Whatsapp"><use xlink:href="assets/img/icons.svg#whatsapp2" /></svg>
                             </a>
                             <a href="https://github.com/SladeSouzaSantos" class="zoom">
-                                <svg class="about__icons on-secondary-container-filter" role="img" aria-label="Acesse o meu perfil do Github"><use xlink:href="assets/img/icons.svg#github" /></svg>
+                                <svg class="about__icons" role="img" aria-label="Acesse o meu perfil do Github"><use xlink:href="assets/img/icons.svg#github" /></svg>
                             </a>
                             <a href="https://www.instagram.com/phassantos" class="zoom">
-                                <svg class="about__icons on-secondary-container-filter" role="img" aria-label="Acesse o meu perfil do Instagram"><use xlink:href="assets/img/icons.svg#instagram" /></svg>
+                                <svg class="about__icons" role="img" aria-label="Acesse o meu perfil do Instagram"><use xlink:href="assets/img/icons.svg#instagram" /></svg>
                             </a>
                             <a href="https://www.linkedin.com/in/phasscode/" class="zoom">
-                                <svg class="about__icons on-secondary-container-filter" role="img" aria-label="Acesse o meu perfil do Linked-in"><use xlink:href="assets/img/icons.svg#linkedin" /></svg>
+                                <svg class="about__icons" role="img" aria-label="Acesse o meu perfil do Linked-in"><use xlink:href="assets/img/icons.svg#linkedin" /></svg>
                             </a>
                             <a href="mailto:phassantos.dev@gmail.com?subject=Contato%20sobre%20Projeto%20-%20Portfolio&body=Ol%C3%A1%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20discutir..." class="zoom">
-                                <svg class="about__icons on-secondary-container-filter" role="img" aria-label="Envie-me um e-mail"><use xlink:href="assets/img/icons.svg#mail" /></svg>
+                                <svg class="about__icons" role="img" aria-label="Envie-me um e-mail"><use xlink:href="assets/img/icons.svg#mail" /></svg>
                             </a>
                         </div>
                     </div>
@@ -88,62 +88,183 @@
                         <p>
                             Possuo profundo domínio e aplicação prática de <span class="accent-text"><strong>Arquitetura Limpa (Clean Architecture), SOLID e TDD</strong></span>, o que garante sistemas altamente testáveis e de fácil manutenção. Minha base em Engenharia me conferiu uma <span class="accent-text"><strong>visão analítica e sistêmica</strong></span> crucial para resolver desafios complexos. Essas habilidades foram aplicadas em projetos de grande escala, como a criação de funcionalidades para o <span class="accent-text"><strong>sistema SIGAA</strong></span>, e no desenvolvimento de <span class="accent-text"><strong>aplicativos mobile</strong></span> complexos.
                         </p>
-                    </div>  
+                    </div> 
                 </div>     
-            </section>
-            <section id="habilidades" class="surface on-surface-text">
-                <h2 class="skills__title">Habilidades</h2>
-                <div id="floating-code-container"></div>                
-                <div class="skills-layout-wrapper">
-                    <div class="skills-nav-container">                        
-                        <div class="skill-card skill-nav skill-background-front-end  active" data-type="Front-End" data-json="assets/json/skills_front-end.json">
-                            <div class="card-header">                                
-                                <h3>Front-End</h3>
-                            </div>
-                            <ul class="card-list-preview" id="list-Front-End"></ul>
+                <div id="skills" class="skills-layout-wrapper">                    
+                    
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_front-end.json" data-color="#C68B59">
+                        <div class="skill-block-header">
+                            <h2 class="skill-block-title" style="color: #C68B59;">Front-End</h2>
                         </div>
-                        <div class="skill-card skill-nav skill-background-back-end" data-type="Back-End" data-json="assets/json/skills_back-end.json">
-                            <div class="card-header">
-                                <h3>Back-End</h3>
-                            </div>
-                            <ul class="card-list-preview" id="list-Back-End"></ul>
-                        </div>
-                        <div class="skill-card skill-nav skill-background-framework" data-type="Frameworks" data-json="assets/json/skills_frameworks.json">
-                            <div class="card-header">
-                                <h3>Frameworks</h3>
-                            </div>
-                            <ul class="card-list-preview" id="list-Frameworks"></ul>
-                        </div>
-                        <div class="skill-card skill-nav skill-background-database" data-type="Database" data-json="assets/json/skills_database.json">
-                            <div class="card-header">
-                                <h3>Database</h3>
-                            </div>
-                            <ul class="card-list-preview" id="list-Database"></ul>
-                        </div>
-                        <div class="skill-card skill-nav skill-background-tools" data-type="Tools" data-json="assets/json/skills_tools.json">
-                            <div class="card-header">
-                                <h3>DevOps</h3>
-                            </div>
-                            <ul class="card-list-preview" id="list-Tools"></ul>
-                        </div>
-                    </div>
-                    <div class="skills-container-limit">
-                        <div class="skills-container on-secondary-container-text">
+                        <div class="skills-container">
                             <div class="skills-rotating-border"></div>
                             <div class="skills__center-node">
-                                <h3 class="skills__title" id="main-skill-title"></h3>
-                                <div class="typed-text-container">
-                                    <span class="text-skill-center" id="main-typed-span"></span>
+                                <h3 class="skills__title" style="color: #C68B59;">Front-End</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
                                 </div>
                             </div>
-                            <ul class="skills-group-radial" id="main-skills-list"></ul>
-                        </div>                                      
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
                     </div>
+
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_back-end.json" data-color="#5E9B82">
+                        <div class="skill-block-header">
+                            <h2 class="skill-block-title" style="color: #5E9B82;">Back-End</h2>
+                        </div>
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node">
+                                <h3 class="skills__title" style="color: #5E9B82;">Back-End</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_database.json" data-color="#5A9BB3">
+                        <div class="skill-block-header">
+                            <h2 class="skill-block-title" style="color: #5A9BB3;">Database</h2>
+                        </div>
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node"> 
+                                <h3 class="skills__title" style="color: #5A9BB3;">Database</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_frameworks.json" data-color="#8E7BB0">
+                        <div class="skill-block-header">
+                            <h2 class="skill-block-title" style="color: #8E7BB0;">Frameworks</h2>
+                        </div>
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node"> 
+                                <h3 class="skills__title" style="color: #8E7BB0;">Frameworks</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_tools.json" data-color="#6D87B3">
+                        <div class="skill-block-header">
+                            <h2 class="skill-block-title" style="color: #6D87B3;">DevOps & Quality</h2>
+                        </div>
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node">
+                                <h3 class="skills__title" style="color: #6D87B3;">DevOps & Quality</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_methodologies.json" data-color="#3498db">
+                        <div class="skill-block-header">
+                            <h2 class="skill-block-title" style="color: #3498db;">Best Practices</h2>
+                        </div>
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node">
+                                <h3 class="skills__title" style="color: #3498db;">Best Practices</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+
+                    <!--<div class="skills-container-limit skill-block" data-json="assets/json/skills_front-end.json" data-color="#C68B59">
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node">
+                                <h3 class="skills__title">Front-End</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_back-end.json" data-color="#5E9B82">
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node">
+                                <h3 class="skills__title">Back-End</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_database.json" data-color="#5A9BB3">
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node">
+                                <h3 class="skills__title">Database</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_frameworks.json" data-color="#8E7BB0">
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node">
+                                <h3 class="skills__title">Frameworks</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_tools.json" data-color="#6D87B3">
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node">
+                                <h3 class="skills__title">DevOps & Quality</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>
+                    <div class="skills-container-limit skill-block" data-json="assets/json/skills_methodologies.json" data-color="#3498db">
+                        <div class="skills-container">
+                            <div class="skills-rotating-border"></div>
+                            <div class="skills__center-node">
+                                <h3 class="skills__title">Methodologies & Architecture</h3> 
+                                <div class="typed-text-container skills__typed-text">
+                                    <span class="text-skill-center"></span> 
+                                </div>
+                            </div>
+                            <ul class="skills-group-radial"></ul> 
+                        </div>                                     
+                    </div>-->
                 </div>
                 <script src="assets/js/skills_generator.js"></script>
-                <script src="assets/js/skills_controller.js"></script>
+                <script src="assets/js/skills_controller.js"></script> 
             </section>
-            <section id="portfolio" class="secondary-container on-secondary-container-text">
+            <section id="portfolio" class="surface on-surface-text">
                 <h2 class="portfolio__title">Portfólio</h2>
                 <div class="portfolio__container">
                     <div class="portfolio__container__menu">
@@ -164,31 +285,30 @@
                 </div>
                 <script inline src="assets/js/portfolio_menu.js" defer></script>
             </section>
-            <section id="experiencia" class="surface on-surface-text">
+            <section id="experiencia" class="secondary-container on-secondary-container-text">
                 <h2 class="experiencia__title">Experiência</h2>
                 <div class="experiencia__container">
                 </div>
                 <script inline src="assets/js/experiencia.js" defer></script>
             </section>
-            <section id="formacao" class="secondary-container on-secondary-container-text">
+            <section id="formacao" class="surface on-surface-text">
                 <h2 class="formacao__title">Formação</h2>
                 <div class="formacao__container">
                 </div>
                 <script inline src="assets/js/formacao.js" defer></script>
             </section>            
         </main> 
-        <footer id="footer" class="surface on-surface-text">
+        <footer id="footer" class="secondary-container on-secondary-container-text">
             <p>© 2025 PHASS CODE. Todos os direitos reservados.</p>
         </footer> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
         
-        <script src="assets/js/gsap-animations.js" defer></script>   
-        <script src="assets/js/background_skills.js" defer></script> 
+        <script src="assets/js/gsap-animations.js" defer></script> 
         <script src="assets/js/tema.js" defer></script> 
         <script src="assets/js/button_float.js" defer></script>
 
-        <button onclick="scrollToTop()" id="btnVoltarAoTopo" title="Voltar ao Topo"> &#9650; </button>   
+        <button id="btnVoltarAoTopo" title="Voltar ao Topo"> &#9650; </button>   
     </body>
 </html>

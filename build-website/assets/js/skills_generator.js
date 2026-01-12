@@ -1,175 +1,127 @@
 class SkillsGenerator {
-    /**
-     * Construtor da classe.
-     * @param {string} idElemento O ID do elemento HTML (ul) onde as skills serão injetadas.
-     * @param {string} urlJsonSkills O caminho (URL) para o arquivo JSON das skills.
-     */
     constructor(idElemento, urlJsonSkills) {
+        this.elementoInsercao = (typeof idElemento === 'string') 
+            ? document.getElementById(idElemento) 
+            : idElemento;
         
-        this.elementoInsercao = document.getElementById(idElemento);
         this.urlJsonSkills = urlJsonSkills;
         
         if (!this.elementoInsercao) {
-            console.error(`Elemento com ID "${idElemento}" não encontrado. A geração de skills não será executada.`);
+            console.error(`Elemento não encontrado.`);
             return;
         }
 
         this.containerPai = this.elementoInsercao.closest('.skills-container');
-        
         this.gerarSkills();
     }
 
-    // Modifique o método gerarSkills()
     async gerarSkills() {
         try {
-            const responseJsonSkills = await fetch(this.urlJsonSkills);
-            
-            if (!responseJsonSkills.ok) {
-                throw new Error(`Erro ao buscar o arquivo JSON: ${responseJsonSkills.statusText} (${this.urlJsonSkills})`);
-            }
-            
-            const skills = await responseJsonSkills.json();
-            
+            const response = await fetch(this.urlJsonSkills);
+            const skills = await response.json();
             this.exibirSkillsCircule(skills);
-
         } catch (error) {
             console.error("Falha ao gerar as skills:", error);
         }
     }
 
-    /**
-     * Calcula o raio dinamicamente baseado na largura do container.
-     * @returns {number} O valor do raio (metade da largura do container).
-     */
     getDynamicRadius() {
         if (this.containerPai) {
             return (this.containerPai.clientWidth / 2) - 20; 
         }
-        return 150; // Valor fallback
+        return 150;
     }
 
-    /**
-     * Gera o HTML e insere as skills em um layout circular (Radial).
-     * @param {Array<Object>} skills O array de objetos com os dados das skills.
-     */
     exibirSkillsCircule(skills) {
-
         const dynamicRadius = this.getDynamicRadius();
-        
         this.elementoInsercao.innerHTML = '';
-
-        if (!skills || skills.length === 0) {
-            return; 
-        }
+        if (!skills || skills.length === 0) return;
 
         const numSkills = skills.length;
-        
-        const angleIncrement = numSkills > 0 ? 360 / numSkills : 0;
+        const angleIncrement = 360 / numSkills;
         let currentAngle = 0;
 
+        // CAPTURA A COR AQUI
+        const corAtiva = window.getComputedStyle(this.containerPai).backgroundColor;
+
         skills.forEach((skill) => {
-            
             const angleRadians = (currentAngle - 90) * (Math.PI / 180); 
-            
             const x = dynamicRadius * Math.cos(angleRadians);
             const y = dynamicRadius * Math.sin(angleRadians);
             
-            const skillJsonString = JSON.stringify(skill).replace(/"/g, '&quot;'); 
-            
-            // FUNÇÃO DE SANITIZAÇÃO CORRIGIDA
-            const skillClass = skill.titulo
-                .toLowerCase()
-                .replace(/\+/g, 'plus') // Trata o '+' (C++ -> cplusplus)
-                .replace(/&/g, '') // Trata o '&' (Git & GitHub -> gitgithub)
-                .replace(/[^a-z0-9]/g, ''); // Remove outros caracteres não alfanuméricos
+            // Sanitização da classe para o Typed.js
+            const skillClass = skill.titulo.toLowerCase()
+                .replace(/\+/g, 'plus')
+                .replace(/&/g, '')
+                .replace(/[^a-z0-9]/g, '');
             
             const listItem = document.createElement('li');
-            
-            // ADIÇÃO: Adiciona a classe única para mapeamento no Typed.js
             listItem.classList.add('skill-node-item', `skill-${skillClass}`); 
-            
-            // O estilo 'transform' posiciona o ícone no círculo.
-            // A remoção da rotação inversa GSAP garante que este 'transform' seja o único aplicado.
             listItem.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
             
-            // --- DATA ATTRIBUTES (para o hover e modal) ---
             listItem.setAttribute('data-skill-title', skill.titulo);
             listItem.setAttribute('data-skill-description', skill.descricao);
-            // ------------------------------------
+
+            // CORREÇÃO NA PASSAGEM DE PARÂMETROS:
+            // O JSON vai primeiro, e a cor vai como uma segunda string separada.
+            const skillJson = JSON.stringify(skill).replace(/"/g, '&quot;'); 
 
             listItem.innerHTML = ` 
                 <div 
                     class="skill-content cursor-pointer"
-                    onclick="abrirModalSkill('${skillJsonString}')"
+                    onclick="abrirModalSkill('${skillJson}', '${corAtiva}')"
+                    style="background-color: ${corAtiva}; border: 2px solid rgba(255,255,255,0.2);"
                 >
-                    <svg class="skill-icon on-secondary-container-filter" role="img" aria-label="${skill.titulo}">
+                    <svg class="skill-icon" role="img" aria-label="${skill.titulo}">
                         <use xlink:href="assets/img/icons.svg#${skill.idicon}"></use>
                     </svg>
                 </div>
             `;
             
             this.elementoInsercao.appendChild(listItem);
-            
             currentAngle += angleIncrement;
 
-            // --- EVENT LISTENERS PARA O HOVER ---
+            // Eventos de Hover para o Typed.js
             listItem.addEventListener('mouseenter', (event) => {
                 const title = event.currentTarget.getAttribute('data-skill-title');
-                const description = event.currentTarget.getAttribute('data-skill-description');
-                
-                // Dispara um evento customizado
                 document.dispatchEvent(new CustomEvent('skillHoverStart', {
-                    detail: {
-                        targetId: this.elementoInsercao.id, 
-                        title: title,
-                        description: description
-                    }
+                    detail: { title: title, targetId: this.elementoInsercao.id }
                 }));
             });
 
             listItem.addEventListener('mouseleave', () => {
-                // Dispara um evento customizado para sinalizar o fim do hover
                 document.dispatchEvent(new CustomEvent('skillHoverEnd', {
-                    detail: {
-                        targetId: this.elementoInsercao.id
-                    }
+                    detail: { targetId: this.elementoInsercao.id }
                 }));
             });
-            // --------------------------------------------------
         });
     }
 }
 
 // ==========================================================
-// FUNÇÕES GLOBAIS PARA O MODAL DE SKILLS (Mantidas)
+// FUNÇÕES GLOBAIS
 // ==========================================================
 
-/**
- * Abre o modal com os detalhes da skill.
- * @param {string} skillJsonString String JSON contendo os dados da skill (escapada).
- */
-window.abrirModalSkill = function(skillJsonString) {
+window.abrirModalSkill = function(skillJsonString, corAtiva) {
+    // 1. Decodifica o JSON da skill
     const skill = JSON.parse(skillJsonString.replace(/&quot;/g, '"')); 
     
-    // CAPTURAR A COR ATIVA: Pegamos a cor de fundo do círculo atual
-    const corAtiva = document.querySelector('.skills-container').style.backgroundColor;
-
+    // 2. Limpa modal anterior
     const modalExistente = document.querySelector('.modal__overlay');
-    if (modalExistente) {
-        modalExistente.remove();
-    }
+    if (modalExistente) modalExistente.remove();
     
+    // 3. Cria o conteúdo usando a cor passada por argumento
     const modalContent = `
         <div class="modal__overlay" onclick="fecharModalSkill()">
             <div class="modal__content" style="background-color: ${corAtiva}; border: 2px solid rgba(255,255,255,0.2);" onclick="event.stopPropagation()">
                 <button class="modal__close-button" onclick="fecharModalSkill()">×</button>
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px; border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 10px">
-                    <svg class="skills__icons__about" style="fill: white; width: 40px; height: 40px;" role="img" aria-label="${skill.titulo}">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 15px">
+                    <svg style="fill: white; width: 40px; height: 40px;">
                         <use xlink:href="assets/img/icons.svg#${skill.idicon}"/>
                     </svg>
-                    <h3 class="modal__title" style="color: white; border-bottom: none; margin-bottom: 0px; padding-bottom: 0px">${skill.titulo}</h3>
+                    <h3 style="color: white; margin: 0; font-size: 1.5rem;">${skill.titulo}</h3>
                 </div>
-                <p class="modal__description" style="color: white;">${skill.descricao || 'Nenhuma descrição detalhada fornecida.'}</p>                
+                <p style="color: white; line-height: 1.6; font-size: 1rem;">${skill.descricao || 'Nenhuma descrição detalhada fornecida.'}</p>                
             </div>
         </div>
     `;

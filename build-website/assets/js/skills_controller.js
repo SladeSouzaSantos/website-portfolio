@@ -1,223 +1,114 @@
 /**
- * SKILLS CONTROLLER - Escala controlada via CSS
+ * SKILLS CONTROLLER - Galeria de Círculos Independentes
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // === 1. CONFIGURAÇÕES E ESTADOS ===
-    const LIST_ID = 'main-skills-list';
-    const SPAN_SELECTOR = '#main-typed-span';
-    const SOBRE_MIM_SELECTOR = '#typed-output';
-    const CIRCLE_SELECTOR = '.skills-container';
-    
-    let typedData = {
-        instance: null,      
-        hoverInstance: null, 
-        initialStrings: [],  
-        timeoutId: null      
-    };
+    const skillBlocks = document.querySelectorAll('.skill-block');
 
-    // === 2. FUNÇÃO: POPULAR CARDS ===
-    async function populateCardPreviews() {
-        const cards = document.querySelectorAll('.skill-card');
+    skillBlocks.forEach(async (block) => {
+        const jsonPath = block.dataset.json;
+        const baseColor = block.dataset.color;
         
-        for (const card of cards) {
-            const jsonPath = card.dataset.json;
-            const type = card.dataset.type;
-            const listContainer = document.getElementById(`list-${type}`);
+        const ulElement = block.querySelector('.skills-group-radial');
+        const typedSpan = block.querySelector('.text-skill-center');
+        const circleContainer = block.querySelector('.skills-container');
+        const rotatingBorder = block.querySelector('.skills-rotating-border');
 
-            if (!listContainer) continue;
+        // 1. Estilização Visual do Círculo
+        if (circleContainer) circleContainer.style.backgroundColor = baseColor;
+        if (rotatingBorder) {
+            rotatingBorder.style.boxShadow = `0 0 20px ${baseColor}`;
+            rotatingBorder.style.borderColor = "rgba(255,255,255,0.4)";
+        }
 
-            try {
-                const response = await fetch(jsonPath);
-                const data = await response.json();
-                listContainer.innerHTML = '';
-                
-                data.forEach(skill => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-                        <svg class="skill-li-icon"><use xlink:href="assets/img/icons.svg#${skill.idicon}"></use></svg>
-                        <span class="skill-li-text">${skill.titulo}</span>
-                    `;
-                    
-                    li.addEventListener('click', (e) => {
-                        e.stopPropagation(); 
-                        if (!card.classList.contains('active')) card.click();
-                        
-                        if (typedData.timeoutId) clearTimeout(typedData.timeoutId);
-                        highlightSkillIcon(skill.titulo);
+        // 2. Estado local para Typed e Hover
+        let state = {
+            instance: null,
+            hoverInstance: null,
+            initialStrings: [],
+            timeoutId: null
+        };
 
-                        if (typedData.instance) typedData.instance.destroy();
-                        if (typedData.hoverInstance) typedData.hoverInstance.destroy();
+        // 3. Injetar Skills via Generator
+        new SkillsGenerator(ulElement, jsonPath);
 
-                        typedData.hoverInstance = initTyped([escapeTypedString(skill.titulo)], false);
-                        
-                        typedData.timeoutId = setTimeout(() => {
-                            highlightSkillIcon(null);
-                            if (typedData.hoverInstance) typedData.hoverInstance.destroy();
-                            typedData.instance = initTyped(typedData.initialStrings, true);
-                        }, 5000);
-                    });
-                    listContainer.appendChild(li);
+        // 4. PINTAR OS ÍCONES (Garante que peguem a cor do background)
+        const observer = new MutationObserver(() => {
+            const icons = ulElement.querySelectorAll('.skill-content');
+            if (icons.length > 0) {
+                icons.forEach(icon => {
+                    icon.style.backgroundColor = baseColor;
+                    icon.style.border = `2px solid rgba(255,255,255,0.2)`;
                 });
-            } catch (error) {
-                console.error(`Erro ao carregar preview:`, error);
-            }
-        }
-    }
-
-    // === 3. FUNÇÕES AUXILIARES ===
-    function escapeTypedString(str) { 
-        return str.replace(/&/g, '&amp;'); 
-    }
-    
-    function getSkillClassSelector(title) {
-        return title.toLowerCase().replace(/\+/g, 'plus').replace(/&/g, '').replace(/[^a-z0-9]/g, '');
-    }
-
-    function highlightSkillIcon(skillTitle) {
-        const container = document.getElementById(LIST_ID);
-        if (!container) return;
-
-        const prev = container.querySelector('.skill-highlight');
-        if (prev) {
-            prev.classList.remove('skill-highlight');
-        }
-
-        if (skillTitle) {
-            const el = container.querySelector(`.skill-${getSkillClassSelector(skillTitle)}`);
-            if (el) {
-                el.classList.add('skill-highlight');
-            }
-        }
-    }
-
-    function initTyped(stringsArray, isLoop = true) {
-        if (typedData.instance && isLoop) typedData.instance.destroy();
-        return new Typed(SPAN_SELECTOR, {
-            strings: stringsArray,
-            typeSpeed: 60,
-            backSpeed: 30,
-            backDelay: isLoop ? 3000 : 999999,
-            loop: isLoop,
-            showCursor: true,
-            cursorChar: '_',
-            // DISPARA ANTES DE COMEÇAR A ESCREVER
-            preStringTyped: (arrayPos, self) => {
-                if (isLoop) {
-                    // Pega a string que vai ser escrita e limpa o escape de caractere
-                    const title = self.strings[arrayPos].replace(/&amp;/g, '&');
-                    highlightSkillIcon(title);
-                }
+                observer.disconnect();
             }
         });
-    }
+        observer.observe(ulElement, { childList: true });
 
-    // === 4. CARREGAMENTO DE CATEGORIA (SEM ESCALA NO GSAP) ===
-    async function loadCategory(jsonPath, title, color) {
-        const circle = document.querySelector(CIRCLE_SELECTOR);
-        const rotatingBorder = document.querySelector('.skills-rotating-border');
-        const listContainer = document.getElementById(LIST_ID);
-        const centerText = document.querySelector('.text-skill-center');
+        // 5. Configuração do Typed.js e Eventos
+        try {
+            const response = await fetch(jsonPath);
+            const data = await response.json();
+            state.initialStrings = data.map(s => s.titulo.replace(/&/g, '&amp;'));
 
-        if (!circle || !listContainer) return;
-
-        gsap.to(circle, {
-            opacity: 0,
-            duration: 0.2,
-            ease: "power2.in",
-            onComplete: async () => {
-                document.getElementById('main-skill-title').innerText = title;
-                
-                circle.style.backgroundColor = color;
-                if (rotatingBorder) {
-                    rotatingBorder.style.borderColor = "rgba(255,255,255,0.4)";
-                    rotatingBorder.style.boxShadow = `0 0 20px ${color}`;
-                }
-
-                if (centerText && color) {
-                    centerText.style.color = color;
-                }
-
-                const observer = new MutationObserver((mutations, obs) => {
-                    const skillContents = document.querySelectorAll('.skill-content');
-                    if (skillContents.length > 0) {
-                        skillContents.forEach(content => {
-                            content.style.backgroundColor = color;
-                            content.style.border = `2px solid ${color}`;
-                        });
-                        obs.disconnect();
+            const initTypedLocal = (strings, isLoop) => {
+                return new Typed(typedSpan, {
+                    strings: strings,
+                    typeSpeed: 60,
+                    backSpeed: 30,
+                    backDelay: 3000,
+                    loop: isLoop,
+                    smartBackspace: false,
+                    preStringTyped: (arrayPos, self) => {
+                        highlightLocalIcon(ulElement, self.strings[arrayPos]);
                     }
                 });
+            };
 
-                observer.observe(listContainer, { childList: true, subtree: true });
+            state.instance = initTypedLocal(state.initialStrings, true);
 
-                if (typedData.instance) typedData.instance.destroy();
-                if (typedData.hoverInstance) typedData.hoverInstance.destroy();
-                clearTimeout(typedData.timeoutId);
-                document.querySelector(SPAN_SELECTOR).innerText = '';
+            // 6. HOVER LOCAL (Restaurado)
+            ulElement.addEventListener('mouseover', (e) => {
+                const node = e.target.closest('.skill-node-item');
+                if (!node) return;
 
-                new SkillsGenerator(LIST_ID, jsonPath);
+                const title = node.getAttribute('data-skill-title');
+                if (state.timeoutId) clearTimeout(state.timeoutId);
+                
+                highlightLocalIcon(ulElement, title);
+                if (state.instance) state.instance.destroy();
+                if (state.hoverInstance) state.hoverInstance.destroy();
 
-                try {
-                    const response = await fetch(jsonPath);
-                    const data = await response.json();
-                    typedData.initialStrings = data.map(s => escapeTypedString(s.titulo));
-                    typedData.instance = initTyped(typedData.initialStrings);
+                state.hoverInstance = initTypedLocal([title.replace(/&/g, '&amp;')], false);
+            });
 
-                    gsap.to(circle, {
-                        opacity: 1,
-                        duration: 0.5,
-                        ease: "power2.out"
-                    });
-                } catch (e) {
-                    gsap.to(circle, { opacity: 1 });
-                }
-            }
-        });
-    }
+            ulElement.addEventListener('mouseout', (e) => {
+                const node = e.target.closest('.skill-node-item');
+                if (!node) return;
 
-    // === 5. EVENTOS E INICIALIZAÇÃO ===
-    document.querySelectorAll('.skill-nav').forEach(nav => {
-        nav.addEventListener('click', function() {
-            if (this.classList.contains('active') && typedData.instance) return;
-            document.querySelectorAll('.skill-nav').forEach(n => n.classList.remove('active'));
-            this.classList.add('active');
-            const color = window.getComputedStyle(this).backgroundColor;
-            loadCategory(this.dataset.json, this.dataset.type, color);
-        });
+                highlightLocalIcon(ulElement, null);
+                if (state.hoverInstance) state.hoverInstance.destroy();
+
+                state.timeoutId = setTimeout(() => {
+                    state.instance = initTypedLocal(state.initialStrings, true);
+                }, 500);
+            });
+
+        } catch (e) {
+            console.error("Erro ao carregar círculo:", e);
+        }
     });
 
-    document.addEventListener('skillHoverStart', (e) => {
-        const { title } = e.detail;
-        if (typedData.timeoutId) clearTimeout(typedData.timeoutId);
-        highlightSkillIcon(title);
-        if (typedData.instance) typedData.instance.destroy();
-        if (typedData.hoverInstance) typedData.hoverInstance.destroy();
-        typedData.hoverInstance = initTyped([escapeTypedString(title)], false);
-    });
-
-    document.addEventListener('skillHoverEnd', () => {
-        highlightSkillIcon(null);
-        if (typedData.hoverInstance) typedData.hoverInstance.destroy();
-        typedData.timeoutId = setTimeout(() => {
-            typedData.instance = initTyped(typedData.initialStrings, true);
-        }, 200);
-    });
-
-    populateCardPreviews();
-
-    if (document.querySelector(SOBRE_MIM_SELECTOR)) {
-        new Typed(SOBRE_MIM_SELECTOR, {
-            strings: ["Sobre mim"],
-            typeSpeed: 50,
-            backDelay: 2000,
-            loop: true,
-            cursorChar: '|'
-        });
-    }
-
-    const firstCard = document.querySelector('.skill-nav.active');
-    if (firstCard) {
-        const color = window.getComputedStyle(firstCard).backgroundColor;
-        loadCategory(firstCard.dataset.json, firstCard.dataset.type, color);
+    // Função de Highlight (independente de IDs)
+    function highlightLocalIcon(ulContainer, skillTitle) {
+        ulContainer.querySelectorAll('.skill-node-item').forEach(el => el.classList.remove('skill-highlight'));
+        if (skillTitle) {
+            const cleanTitle = skillTitle.replace(/&amp;/g, '&');
+            const classTarget = cleanTitle.toLowerCase()
+                                          .replace(/\+/g, 'plus')
+                                          .replace(/&/g, '')
+                                          .replace(/[^a-z0-9]/g, '');
+            const el = ulContainer.querySelector(`.skill-${classTarget}`);
+            if (el) el.classList.add('skill-highlight');
+        }
     }
 });
