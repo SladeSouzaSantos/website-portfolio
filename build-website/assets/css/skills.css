@@ -201,6 +201,12 @@
     }
 }
 
+@media(max-width: 1320px) {
+    .skills-layout-wrapper {
+        padding-top: 0px;
+    }
+}
+
 @media(max-width: 595px) {
     .skills-container-limit {
         width: 100%;
