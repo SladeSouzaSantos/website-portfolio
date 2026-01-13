@@ -24,11 +24,11 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px 20px;
+    gap: 20px 8px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding-top: 100px;
+    padding-top: 50px;
     align-items: center;
     justify-content: space-evenly;
     font-family: 'Fira Mono', 'Courier New', monospace;
@@ -57,10 +57,12 @@
     height: 252px; /* Altura maior para caber o título e o círculo */
     position: relative;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--md-sys-color-surface);
     transition: transform 0.3s ease;
-    padding: 20px; /* Espaçamento interno */
-    /*box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);*/
+    padding: 20px;
+    border: 1px solid;
+    box-shadow: 0 0 50px var(--md-sys-color-surface);
+    opacity: 0.95;
 }
 
 .skills-container-limit:hover {
@@ -83,7 +85,7 @@
     width: 100%;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid;
     text-align: center;
 }
 
@@ -156,7 +158,7 @@
 
 .skills__typed-text {
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 900;
     padding: 0 48px;
     text-align: center;
 }
@@ -184,7 +186,7 @@
 .skill-node-item.skill-highlight .skill-content {
     filter: brightness(1.2); /* Dá um boost na cor de fundo */
     transform: scale(1.1);
-    border-color: #fff !important;
+    border-color: var(--md-sys-color-on-secondary-container) !important;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     opacity: 0.975;
 }
@@ -207,15 +209,18 @@
     }
 }
 
-@media(max-width: 595px) {
+@media(max-width: 610px) {
     .skills-container-limit {
         width: 100%;
         height: 352px;
         background: none;
+        border: none;
+        box-shadow: none;
     }
 
     .skills-container {
         transform: scale(1.1);
+        box-shadow: 0 0 50px var(--md-sys-color-surface);
     }
 
     .skill-block-header {
@@ -226,9 +231,13 @@
         display: inline;
         font-size: 1.4rem;
     }
+
+    .skills__typed-text {
+        font-size: 1.0rem;
+    }
 }
 
-@media(max-width: 595px) {
+@media(max-width: 395px) {
     .skills-container {
         transform: scale(1.0);
     }
