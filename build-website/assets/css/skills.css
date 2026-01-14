@@ -189,11 +189,19 @@
         transform: scale(1.3);
         margin: 60px;
     }
+
+    .skills-container-limit:hover {
+        transform: scale(1.3) translateY(-10px);
+    }
 }
 
 @media(max-width: 424px) {
     .skills-container-limit {
         transform: scale(1.2);
         margin: 40px 0;
+    }
+
+    .skills-container-limit:hover {
+        transform: scale(1.2) translateY(-10px);
     }
 }
