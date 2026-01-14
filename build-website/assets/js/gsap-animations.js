@@ -25,7 +25,7 @@ gsap.from("label #icon-tema use",
 gsap.from(".skills-layout-wrapper",
     {
         y: 100,
-        opacity: 0,
+        opacity: 0.001,
         duration: 1,
         delay: 3,
         stagger: 0.2,
