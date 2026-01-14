@@ -28,6 +28,6 @@ gsap.from(".skills-layout-wrapper",
         opacity: 0.001,
         duration: 1,
         delay: 3,
-        stagger: 0.2,
+        stagger: 0.2
     }
 );
