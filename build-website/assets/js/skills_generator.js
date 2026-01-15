@@ -93,9 +93,10 @@ class SkillsGenerator {
                     
                     const listView = container.querySelector('.skills-list-view');
                     listView.classList.remove('hidden');
-                    
+                                        
                     // Entrada suave da Lista
-                    gsap.fromTo(listView, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4 });
+                    gsap.fromTo(listView, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4});
+                    gsap.fromTo(listView.children, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.5, ease: "power3.out" });
 
                     // Entrada suave do botão de Círculo
                     btnCircle.classList.remove('hidden');

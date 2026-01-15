@@ -143,6 +143,17 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.job-badge span { 
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    text-align: center;
+    text-transform: uppercase;
+    width: 154px;
+    height: 16px;
+    overflow: hidden;
+}
+
 @media(max-width: 1320px){
     .about__group{
         flex-direction: column;
