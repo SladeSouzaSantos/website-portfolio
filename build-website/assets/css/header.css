@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid var(--md-sys-color-secondary);
-    padding: 0% 10%;
+    padding: 0px 20px;
     opacity: 1 !important;
 }
 
@@ -102,21 +102,23 @@
     }
 
     .header__navegation{
-        display: none;
-        z-index: 10;        
-    }
-
-    .header__menu__check:checked~.header__navegation{
         display: flex;
         flex-direction: column;
         position: absolute;
-        left: 0px;
-        top: 150px;
-        width: 95%;
-        padding: 2.5%;        
+        left: -20px;
+        top: 104px;
+        width: 150px;
+        padding: 10px;        
         background-color: var(--md-sys-color-surface-variant);
-        opacity: 0.98;
-    }    
+        border-radius: 0px 0px 12px 0px;
+        opacity: 0.9;
+        visibility: hidden;
+
+    }
+
+    .header__menu__check:checked~.header__navegation{
+        opacity: 0.001;
+    }  
 
     .header__navegation__link{
         color: var(--md-sys-color-on-surface-variant);
