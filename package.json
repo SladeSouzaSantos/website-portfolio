@@ -6,7 +6,8 @@
   "author": "Pedro Santos",
   "license": "ISC",
   "scripts": {
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "build": "gulp"
   },
   "resolutions": {
     "graceful-fs": "^4.2.4"
