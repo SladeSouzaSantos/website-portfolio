@@ -41,6 +41,7 @@
     mask-position: var(--mask-position);
     mask-size: var(--mask-size);
     display: none;
+    opacity: 0.001;
 }
 
 .header-button-tema{
@@ -50,6 +51,7 @@
 .header-mudar-tema{
     cursor: pointer;
     padding-right: 30px;
+    opacity: 0.001;
 }
 
 .header__navegation{
@@ -73,6 +75,7 @@
     width: 9.375rem;
     will-change: transform;
     transform: translateZ(0);
+    opacity: 0.001;
 }
 
 .header__icons{

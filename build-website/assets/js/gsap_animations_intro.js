@@ -42,6 +42,12 @@ gsap.from("#home a svg use",
     }
 );
 
+gsap.to(".header__logo", {
+    opacity: 1,
+    duration: 0,
+    delay: 0
+});
+
 gsap.from("#home div",
     {
         y: -200,
@@ -49,6 +55,12 @@ gsap.from("#home div",
         delay: 0
     }
 );
+
+gsap.to(".header__menu__button", {
+    opacity: 1,
+    duration: 0,
+    delay: 0
+});
 
 gsap.from("label #icon-tema use",
     {
@@ -60,6 +72,12 @@ gsap.from("label #icon-tema use",
         }
     }
 );
+
+gsap.to(".header-mudar-tema", {
+    opacity: 1,
+    duration: 0,
+    delay: 0
+});
 
 gsap.from(".skills-layout-wrapper",
     {
