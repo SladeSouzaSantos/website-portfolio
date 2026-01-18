@@ -1,25 +1,3 @@
-@keyframes fadeInScale {
-    from {
-        opacity: 0.001;
-        transform: translateY(-20px) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0.001;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .about__group{
     display: flex;
     flex-direction: row;
@@ -35,8 +13,6 @@
     align-items: center;
     width: 80%;
     gap: 10px;
-    animation: fadeInScale 0.5s ease-out 0.1s both; 
-    animation-delay: 2.0s;
 }
 
 .about__perfil-image{
@@ -69,23 +45,15 @@
     gap: 20px;
 }
 
-.about__icons{    
-    width: 34px;
-    height: 34px;
-    transform-origin: center center;
-    transition: transform 0.3s ease-in-out;
-    overflow: hidden;
-    
-    opacity: 0.001;
-    transform: translateY(10px);
-    animation: slideInUp 0.3s ease-out forwards;
+.about__perfil-social-media a{
+    overflow: visible;
 }
 
-.about__perfil-social-media a:nth-child(1) .about__icons { animation-delay: 2.1s; }
-.about__perfil-social-media a:nth-child(2) .about__icons { animation-delay: 2.3s; }
-.about__perfil-social-media a:nth-child(3) .about__icons { animation-delay: 2.5s; }
-.about__perfil-social-media a:nth-child(4) .about__icons { animation-delay: 2.7s; }
-.about__perfil-social-media a:nth-child(5) .about__icons { animation-delay: 2.9s; }
+.about__icons{    
+    width: 34px;
+    height: 34px;  
+      
+}
 
 .about__context{
     display: flex;
@@ -110,23 +78,7 @@
     overflow-wrap: break-word;
 }
 
-.about__context .about__title,
-.about__context p {
-    opacity: 0.001;
-    animation: slideInUp 0.5s ease-out forwards; 
-}
 
-.about__context .about__title {
-    animation-delay: 2.1s; 
-}
-
-.about__context p:nth-child(2) {
-    animation-delay: 2.2s; 
-}
-
-.about__context p:nth-child(3) {
-    animation-delay: 2.3s; 
-}
 
 .about__icons {
     fill: var(--md-sys-color-on-secondary-container);

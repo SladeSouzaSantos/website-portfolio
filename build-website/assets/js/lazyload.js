@@ -1,78 +1,71 @@
 (function(){
+	
+    function throttle(fn) {
+        fn.jarodei = false;
+        return function(){
+            if (fn.jarodei) return;
+            fn.jarodei = true;
+            setTimeout(function () { 
+                fn.jarodei = false; 
+            }, 200);
+            fn();   
+        };
+    }
 
-	// A função throttle (limitador de execução) permanece exatamente igual
-	function throttle(fn) {
-		fn.jarodei = false;
+    var bgElements = document.querySelectorAll('div[data-src]');
+    var cache, alturaJanela, scrollListener, resizeListener;
+
+    function refazCache() {
+        cache = [];
 		
-		return function(){
-			if (fn.jarodei) return;
-			fn.jarodei = true;
-			setTimeout(function () { 
-				fn.jarodei = false; 
-			}, 200);
+        bgElements = document.querySelectorAll('div[data-src]');
+        
+        for (var i = 0; i < bgElements.length; i++) {
+            cache.push({
+                topo: bgElements[i].getBoundingClientRect().top + window.pageYOffset,
+                elemento: bgElements[i]
+            });
+        }
 
-			fn();	
-		};
-	}
+        cache = cache.sort(function(a,b){
+            return a.topo - b.topo;
+        });
 
-	// ALTERAÇÃO 1: Seleciona as DIVs com a URL no atributo data-src (para background-image)
-	var bgElements = document.querySelectorAll('div[data-src]');
-	var cache, alturaJanela, scrollListener, resizeListener;
+        alturaJanela = window.innerHeight;
+    }
 
-	function refazCache() {
-		cache = [];
+    function carregaImagens() {
+		
+        var currentScroll = window.pageYOffset;
 
-		// calcula os topos no cache
-		// Percorre os elementos selecionados (agora são DIVs)
-		for (var i = 0; i < bgElements.length; i++) {
-			cache.push({
-				topo: bgElements[i].getBoundingClientRect().top + pageYOffset,
-				elemento: bgElements[i]
-			});
-		}
+        while (cache.length && cache[0].topo < currentScroll + alturaJanela + 200) {
+            var element = cache.shift().elemento;
+            var imageUrl = element.getAttribute('data-src');
+            
+            if (imageUrl) {
+                element.style.backgroundImage = 'url(\'' + imageUrl + '\')';
+                element.removeAttribute('data-src');
+            }
+        }
 
-		// ordena o cache pela imagem mais proxima do topo
-		cache = cache.sort(function(a,b){
-			return a.topo - b.topo;
-		});
-
-		// cache da altura da janela
-		alturaJanela = window.innerHeight;
-	}
-
-	function carregaImagens() {
-		// A condição 'cache[0].topo < pageYOffset + alturaJanela + 200' 
-        // verifica se o elemento está a 200px da viewport.
-		while (cache.length && cache[0].topo < pageYOffset + alturaJanela + 200) {
-			var element = cache.shift().elemento;
+        if (document.querySelectorAll('div[data-src]').length == 0) {
+            window.removeEventListener('scroll', scrollListener);
+            window.removeEventListener('resize', resizeListener);
 			
-			// ALTERAÇÃO 2: Aplica a URL na propriedade CSS background-image
-			var imageUrl = element.getAttribute('data-src');
-			element.style.backgroundImage = 'url(\'' + imageUrl + '\')';
+            if(window.lenis) window.lenis.off('scroll', window.forceCarregaImagens);
+        }
+    }
+	
+    window.forceCarregaImagens = throttle(carregaImagens);
+	
+    refazCache();
+    carregaImagens();
 
-			// Remove o atributo data-src para não ser reprocessado
-			element.removeAttribute('data-src');
-		}
+    window.addEventListener('resize', resizeListener = throttle(function() {
+        refazCache();
+        carregaImagens();
+    }));
 
-		// removo eventos se não precisar mais deles
-		// ALTERAÇÃO 3: Agora verifica se a lista de elementos 'data-src' está vazia
-		if (document.querySelectorAll('div[data-src]').length == 0) {
-			window.removeEventListener('scroll', scrollListener);
-			window.removeEventListener('resize', resizeListener);
-		}
-	}
-
-	// roda primeira vez
-	refazCache();
-	carregaImagens();
-
-	// onresize refazCache e carrega eventuais imagens
-	window.addEventListener('resize', resizeListener = throttle(function() {
-		refazCache();
-		carregaImagens();
-	}));
-
-	// onscroll só carrega imagens
-	window.addEventListener('scroll', scrollListener = throttle(carregaImagens));
+    window.addEventListener('scroll', scrollListener = window.forceCarregaImagens);
 
 })();

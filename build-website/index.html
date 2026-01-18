@@ -9,7 +9,6 @@
         <link rel="shortcut icon" href="assets/img/logo-phasscode.svg" type="image/x-icon"/>
                 
         <script async src="libs/svg4everybody.js">svg4everybody();</script>
-        <script async src="assets/js/lazyload.js"></script>
         
         <link inline rel="stylesheet" href="assets/css/reset.css">
         <link inline rel="stylesheet" href="assets/css/palletes_color.css">
@@ -241,8 +240,6 @@
                         </div>                                     
                     </div>
                 </div>
-                <script src="assets/js/skills_generator.js"></script>
-                <script src="assets/js/skills_controller.js"></script> 
             </section>
             <section id="portfolio" class="surface on-surface-text">
                 <h2 class="portfolio__title">Portfólio</h2>
@@ -281,15 +278,23 @@
         <footer id="footer" class="secondary-container on-secondary-container-text">
             <p>© 2025 PHASS CODE. Todos os direitos reservados.</p>
         </footer> 
+        <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js" defer></script> 
+        <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
-        
+
+        <script src="assets/js/smooth-scroll.js" defer></script>
+
+        <script src="assets/js/lazyload.js" defer></script>
+        <script src="assets/js/tema.js" defer></script>
+        <script src="assets/js/skills_generator.js" defer></script>
+        <script src="assets/js/skills_controller.js" defer></script>
+
         <script src="assets/js/gsap_animations_intro.js" defer></script>
         <script src="assets/js/gsap_animations_menu.js" defer></script> 
-        <script src="assets/js/tema.js" defer></script> 
         <script src="assets/js/button_float.js" defer></script>
 
-        <button id="btnVoltarAoTopo" title="Voltar ao Topo"> &#9650; </button>   
+        <button id="btnVoltarAoTopo" aria-label="Voltar ao topo da página"> &#9650; </button>   
     </body>
 </html>

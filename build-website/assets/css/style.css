@@ -85,10 +85,20 @@ h2{
 #btnVoltarAoTopo.visible {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: scale(1.1) translateY(0);
 }
 
 #btnVoltarAoTopo:hover {
     opacity: 1;
     transform: scale(1.1); /* Um leve feedback ao passar o mouse */
+}
+
+@media (max-width: 600px) {
+    #btnVoltarAoTopo {
+        right: 15px;
+        bottom: 15px;
+        width: 45px;
+        height: 45px;
+        opacity: 0.5 !important;
+    }
 }
