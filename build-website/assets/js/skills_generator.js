@@ -43,7 +43,7 @@ class SkillsGenerator {
             li.onclick = () => window.abrirModalSkill(skillJson, corAtiva);
             
             li.innerHTML = `
-                <svg style="width:32px; height:32px; color:${corAtiva}; fill:${corAtiva}"><use xlink:href="assets/img/icons.svg#${skill.idicon}"/></svg>
+                <svg class="img__or__svg" style="width:32px; height:32px; color:${corAtiva}; fill:${corAtiva}"><use xlink:href="assets/img/icons.svg#${skill.idicon}"/></svg>
                 <span style="color:${corAtiva}; font-weight:bold;">${skill.titulo}</span>
             `;
             listUl.appendChild(li);
@@ -194,7 +194,7 @@ class SkillsGenerator {
                     onclick="abrirModalSkill('${skillJson}', '${corAtiva}')"
                     style="background-color: ${corAtiva}; border: 2px solid rgba(255,255,255,0.2);"
                 >
-                    <svg class="skill-icon" role="img" aria-label="${skill.titulo}">
+                    <svg class="img__or__svg skill-icon" role="img" aria-label="${skill.titulo}">
                         <use xlink:href="assets/img/icons.svg#${skill.idicon}"></use>
                     </svg>
                 </div>
@@ -238,7 +238,7 @@ window.abrirModalSkill = function(skillJsonString, corAtiva) {
             <div class="modal__content" style="color: white; background-color: ${corAtiva}; border: 2px solid rgba(255,255,255,0.2);" onclick="event.stopPropagation()">
                 <button class="modal__close-button" onclick="fecharModalSkill()">×</button>
                 <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 15px">
-                    <svg style="fill: white; width: 40px; height: 40px;">
+                    <svg class="img__or__svg" style="fill: white; width: 40px; height: 40px;">
                         <use xlink:href="assets/img/icons.svg#${skill.idicon}"/>
                     </svg>
                     <h3 style="color: white; margin: 0; font-size: 1.5rem;">${skill.titulo}</h3>

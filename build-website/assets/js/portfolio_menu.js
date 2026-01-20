@@ -47,7 +47,7 @@
 
                 projeto.linguagens.forEach(linguagem => {           
                     iconesLinguagemUtilizadasDiv += `
-                    <svg class="portfolio__icons on-tertiary-container-filter" role="img" aria-label="Acesse o meu perfil do Linked-in"><use xlink:href="assets/img/icons.svg#${linguagem}" /></svg>
+                    <svg class="img__or__svg portfolio__icons on-tertiary-container-filter" role="img" aria-label="Acesse o meu perfil do Linked-in"><use xlink:href="assets/img/icons.svg#${linguagem}" /></svg>
                     `;
                 });
     
@@ -61,7 +61,7 @@
                     <div class="portfolio__card-titulo portfolio__card-${projeto.tipo}">
                         <div class="portfolio__button" style="text-decoration: none;">
                             <h2 class="on-surface-text">${projeto.titulo}</h2>
-                            <svg class="portfolio__icons vibracao on-surface-filter" role="img" aria-label="Acesse o projeto"><use xlink:href="assets/img/icons.svg#${projeto.icon_acess}" /></svg>
+                            <svg class="img__or__svg portfolio__icons vibracao on-surface-filter" role="img" aria-label="Acesse o projeto"><use xlink:href="assets/img/icons.svg#${projeto.icon_acess}" /></svg>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                 <div class="modal__link-container">
                     <a href="${projeto.site}" target="_blank" class="modal__link-site on-primary-container-text">
                         Acessar Site do Projeto
-                        <svg class="modal__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        <svg class="img__or__svg modal__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     </a>
                 </div>
             `;

@@ -1,12 +1,3 @@
-// 1. REGISTRO E CONFIGURAÇÃO
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.ticker.add((time) => {
-    window.lenis?.raf(time * 1000);
-});
-gsap.ticker.lagSmoothing(0);
-
-// --- 2. LÓGICA DO TEXTO ROTATIVO ---
 const texts = ["JAVA | SPRING", "REACT | Node.js", "DART | FLUTTER", "PYTHON | DJANGO", "JAVA | ANGULAR", "REACT | DJANGO"];
 const textElement = document.getElementById("about-development-text");
 let index = 0;
@@ -31,7 +22,6 @@ function animateText() {
     });
 }
 
-// --- 3. TIMELINE DE ENTRADA INICIAL (HERO SECTION) ---
 const introTL = gsap.timeline();
 
 introTL
@@ -40,7 +30,6 @@ introTL
     .from("#home a svg use", { x: -200, duration: 1, ease: "back.out(1.7)" }, "-=0.5") 
     .from("label #icon-tema use", { x: 200, duration: 1, ease: "back.out(1.7)", onComplete: animateText }, "<");
 
-// --- 4. ANIMAÇÃO DA SEÇÃO ABOUT (SUBSTITUINDO O CSS) ---
 const aboutTL = gsap.timeline({
     scrollTrigger: {
         trigger: ".about__group",
@@ -76,48 +65,14 @@ aboutTL
         ease: "back.out(1.7)"
     }, "-=0.3");
 
-// --- 5. ANIMAÇÕES DE REVELAÇÃO NO SCROLL RESTANTES ---
-
-// Revelar as Skills
 gsap.from(".skills-layout-wrapper", {
     scrollTrigger: {
         trigger: ".skills-layout-wrapper",
-        start: "top 85%",
-        toggleActions: "play none none none"
+        start: "top 80%",
     },
     y: 100,
     autoAlpha: 0,
     duration: 1,
     stagger: 0.2,
     ease: "power2.out"
-});
-
-// Revelar Histórico de Experiência
-gsap.from(".experiencia__container__historico", {
-    scrollTrigger: {
-        trigger: ".experiencia__container",
-        start: "top 80%"
-    },
-    x: -50,
-    autoAlpha: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "power2.out"
-});
-
-// Revelar Histórico de Formação
-gsap.from(".formacao__container__historico", {
-    scrollTrigger: {
-        trigger: ".formacao__container",
-        start: "top 80%"
-    },
-    x: 50,
-    autoAlpha: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "power2.out"
-});
-
-window.addEventListener("load", () => {
-    ScrollTrigger.refresh();
 });

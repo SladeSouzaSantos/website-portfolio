@@ -30,7 +30,7 @@
                     </div>
                     <div class="formacao__linha-historica-container">
                         <div class="formacao__linha-historica"></div>
-                        <svg  class="formacao__icons" role="img"><use class="on-surface-filter" xlink:href="assets/img/icons.svg#${formacao.tipo}" /></svg>                             
+                        <svg  class="img__or__svg formacao__icons" role="img"><use class="on-surface-filter" xlink:href="assets/img/icons.svg#${formacao.tipo}" /></svg>                             
                     </div>
                     <div class="formacao__cargo-container" ${styleUltimoContainer}>
                         <h3 class="formacao__cargo-titulo">${formacao.cargo_titulo}</h3>
@@ -43,7 +43,7 @@
                 <div class="formacao__container__historico">
                     <div class="formacao__linha-historica-container">
                         <div class="formacao__linha-historica"></div>
-                        <svg  class="formacao__icons" role="img"><use class="on-surface-filter" xlink:href="assets/img/icons.svg#${formacao.tipo}" /></svg>                             
+                        <svg  class="img__or__svg formacao__icons" role="img"><use class="on-surface-filter" xlink:href="assets/img/icons.svg#${formacao.tipo}" /></svg>                             
                     </div>
                     <div class="formacao__container-mobile-view">
                         <div class="formacao__local-container">
