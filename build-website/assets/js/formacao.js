@@ -9,6 +9,7 @@
     var exibicaoMobile = "";
 
     window.addEventListener("resize", montarTelaFormacao);
+
     montarTelaFormacao();
 
     function montarTelaFormacao(){
@@ -68,6 +69,10 @@
             telaModoExibicao = "mobile";
             formacaoContainer.innerHTML = exibicaoMobile;
         }
-    }   
+
+        window.telaModoExibicao = telaModoExibicao;
+    }
+
+    window.telaExibicaoReferencia = telaModoExibicao;
     
 })();

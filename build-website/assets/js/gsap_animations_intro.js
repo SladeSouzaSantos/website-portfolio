@@ -18,7 +18,7 @@ function animateText() {
         { y: 30, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, ease: "elastic.out(1, 0.5)" }
     ).to(textElement, {
-        y: -30, opacity: 0, duration: 1, ease: "power2.in", delay: 2
+        y: -30, opacity: 0, duration: 1, ease: "power2.in", delay: 1.5
     });
 }
 

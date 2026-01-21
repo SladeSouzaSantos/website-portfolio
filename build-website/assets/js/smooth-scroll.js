@@ -48,12 +48,17 @@ preloadImg(".img__or__svg").then(() => {
 
     window.addEventListener('resize', () => {
         window.lenis.resize();
-        window.ScrollTrigger.refresh();
+        if(window.telaExibicaoReferencia != window.telaModoExibicao){
+            window.animations_update();            
+            window.telaExibicaoReferencia = window.telaModoExibicao;
+        }else{
+            window.ScrollTrigger.refresh();
+        }
     });
 
     window.addEventListener('load', () => {
         window.lenis.resize();
-        window.ScrollTrigger.refresh();
+        window.animations_update();
     });
 
 });

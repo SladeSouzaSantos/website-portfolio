@@ -5,7 +5,8 @@
 }
 
 .formacao__container{
-    padding-top: 48px;
+    padding: 48px 10px;
+    overflow: hidden;
 }
 
 .formacao__container-mobile-view{

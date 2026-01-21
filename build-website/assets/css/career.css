@@ -5,7 +5,8 @@
 }
 
 .experiencia__container{
-    padding-top: 48px;
+    padding: 48px 10px;
+    overflow: hidden;
 }
 
 .experiencia__container-mobile-view{
