@@ -3,6 +3,8 @@ window.animation_experiencia = function animation_experiencia() {
     const historicoExperienciaLinha = document.querySelectorAll(".experiencia__linha-historica");
     const historicoExperienciaIcon = document.querySelectorAll(".experiencia__icons");
     const historicoExperienciaCargo = document.querySelectorAll(".experiencia__cargo-container");
+
+    console.log("GSAP EXPERIÊNCIA");
     
     historicoExperienciaLocal.forEach((experiencia) => {
         gsap.from(experiencia, {

@@ -67,4 +67,6 @@ function lenisInitStart() {
         window.lenis.resize();
         window.animations_update();
     });
+
+    console.log("LENIS INIT");
 }

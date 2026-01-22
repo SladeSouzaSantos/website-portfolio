@@ -64,10 +64,13 @@
         if((telaModoExibicao != "computador") && (window.innerWidth >= larguraTelaTransicaoReferencia)){
             telaModoExibicao = "computador";
             formacaoContainer.innerHTML = exibicaoComputador;
+            console.log("FORMAÇÃO CARREGADO PC");
             
         }else if((telaModoExibicao != "mobile") && (window.innerWidth < larguraTelaTransicaoReferencia)){
             telaModoExibicao = "mobile";
             formacaoContainer.innerHTML = exibicaoMobile;
+
+            console.log("FORMAÇÃO CARREGADO MOBILE");
         }
 
         window.telaModoExibicao = telaModoExibicao;

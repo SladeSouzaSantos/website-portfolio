@@ -3,6 +3,8 @@ window.animation_formacao = function animation_formacao() {
     const historicoFormacaoLinha = document.querySelectorAll(".formacao__linha-historica");
     const historicoFormacaoIcon = document.querySelectorAll(".formacao__icons");
     const historicoFormacaoCargo = document.querySelectorAll(".formacao__cargo-container");
+
+    console.log("GSAP FORMAÇÃO");
     
     historicoFormacaoLocal.forEach((formacao) => {
         gsap.from(formacao, {

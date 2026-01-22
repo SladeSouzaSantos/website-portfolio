@@ -63,11 +63,19 @@
         if((telaModoExibicao != "computador") && (window.innerWidth >= larguraTelaTransicaoReferencia)){
             telaModoExibicao = "computador";
             experienciaContainer.innerHTML = exibicaoComputador;
+
+            console.log("EXPERIÊNCIA CARREGADO PC");
             
         }else if((telaModoExibicao != "mobile") && (window.innerWidth < larguraTelaTransicaoReferencia)){
             telaModoExibicao = "mobile";
             experienciaContainer.innerHTML = exibicaoMobile;
+
+            console.log("EXPERIÊNCIA CARREGADO MOBILE");
         }
-    }   
+
+        window.telaModoExibicao = telaModoExibicao;
+    } 
+    
+    window.telaExibicaoReferencia = telaModoExibicao;
     
 })();
