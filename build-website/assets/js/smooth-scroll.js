@@ -7,7 +7,14 @@ function preloadImg(selector = "img") {
 }
 
 
-preloadImg(".img__or__svg").then(() => {
+preloadImg(".img__or__svg").then(() => {   
+    lenisInitStart();
+}).catch(err => {
+    console.warn("Aviso: Algumas imagens falharam, iniciando GSAP mesmo assim.", err);
+    lenisInitStart();
+});
+
+function lenisInitStart() {
     const lenis = new Lenis({ 
         duration: 1.2, 
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
@@ -60,5 +67,4 @@ preloadImg(".img__or__svg").then(() => {
         window.lenis.resize();
         window.animations_update();
     });
-
-});
+}
