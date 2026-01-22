@@ -7,10 +7,18 @@
     var telaModoExibicao = "";
     var exibicaoComputador = "";
     var exibicaoMobile = "";
-
-    window.addEventListener("resize", montarTelaFormacao);
-
+    
     montarTelaFormacao();
+    window.telaExibicaoReferencia = telaModoExibicao;
+    window.telaExibicaoReferenciaFormacao = telaModoExibicao;
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        if(window.telaExibicaoReferenciaFormacao != window.telaModoExibicao){
+            montarTelaFormacao();           
+            window.telaExibicaoReferenciaFormacao = window.telaModoExibicao;
+        }
+    });
 
     function montarTelaFormacao(){
         const larguraTela = window.innerWidth;
@@ -64,18 +72,15 @@
         if((telaModoExibicao != "computador") && (window.innerWidth >= larguraTelaTransicaoReferencia)){
             telaModoExibicao = "computador";
             formacaoContainer.innerHTML = exibicaoComputador;
-            console.log("FORMAÇÃO CARREGADO PC");
             
         }else if((telaModoExibicao != "mobile") && (window.innerWidth < larguraTelaTransicaoReferencia)){
             telaModoExibicao = "mobile";
             formacaoContainer.innerHTML = exibicaoMobile;
-
-            console.log("FORMAÇÃO CARREGADO MOBILE");
         }
 
         window.telaModoExibicao = telaModoExibicao;
+        window.formacaoPronta = true;
+        if (window.animations_update) window.animations_update();
     }
 
-    window.telaExibicaoReferencia = telaModoExibicao;
-    
 })();

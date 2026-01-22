@@ -3,8 +3,6 @@ window.animation_experiencia = function animation_experiencia() {
     const historicoExperienciaLinha = document.querySelectorAll(".experiencia__linha-historica");
     const historicoExperienciaIcon = document.querySelectorAll(".experiencia__icons");
     const historicoExperienciaCargo = document.querySelectorAll(".experiencia__cargo-container");
-
-    console.log("GSAP EXPERIÊNCIA");
     
     historicoExperienciaLocal.forEach((experiencia) => {
         gsap.from(experiencia, {
@@ -19,7 +17,6 @@ window.animation_experiencia = function animation_experiencia() {
             x: -50,
             autoAlpha: 0,
             duration: 0.25,
-            stagger: 2,
             ease: "power2.out"
         });
     });
@@ -36,7 +33,6 @@ window.animation_experiencia = function animation_experiencia() {
             },
             y: 50,
             duration: 0.25,
-            stagger: 2,
             ease: "power2.out"
         });
     });
@@ -53,7 +49,6 @@ window.animation_experiencia = function animation_experiencia() {
             },
             scale: 0.001,
             duration: 0.25,
-            stagger: 2,
             ease: "power2.out"
         });
     });
@@ -71,7 +66,6 @@ window.animation_experiencia = function animation_experiencia() {
             x: 50,
             autoAlpha: 0,
             duration: 0.25,
-            stagger: 2,
             ease: "power2.out"
         });
     });

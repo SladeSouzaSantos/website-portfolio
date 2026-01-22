@@ -2,18 +2,27 @@
     const experienciaContainer = document.querySelector(".experiencia__container");  
     const responseJsonExperiencia = await fetch("assets/json/experiencia.json");
     const experiencias = await responseJsonExperiencia.json();
-    
-    const larguraTelaTransicaoReferencia = 900;
-    var telaModoExibicao = "";
-    var exibicaoComputador = "";
-    var exibicaoMobile = "";
 
-    window.addEventListener("resize", montarTelaExperiencia);
     montarTelaExperiencia();
 
-    function montarTelaExperiencia(){
-        const larguraTela = window.innerWidth;
+    window.telaExibicaoReferencia = telaModoExibicao;
+    window.telaExibicaoReferenciaExperiencia = telaModoExibicao;
+    
+    window.addEventListener('resize', () => {
+        if(window.telaExibicaoReferenciaExperiencia != window.telaModoExibicao){
+            montarTelaExperiencia();           
+            window.telaExibicaoReferenciaExperiencia = window.telaModoExibicao;
+        }
+    });
 
+    function montarTelaExperiencia(){
+        const larguraTelaTransicaoReferencia = 900;
+        var telaModoExibicao = "";
+        var exibicaoComputador = "";
+        var exibicaoMobile = "";
+        
+        const larguraTela = window.innerWidth;
+    
         if(telaModoExibicao == ""){
             var interacoes = 0;
             var styleUltimoContainer = "";
@@ -38,7 +47,7 @@
                     </div>
                 </div>
                 `;
-
+    
                 exibicaoMobile += `
                 <div class="experiencia__container__historico">
                     <div class="experiencia__linha-historica-container">
@@ -59,23 +68,20 @@
                 `;
             });
         }
-
+    
         if((telaModoExibicao != "computador") && (window.innerWidth >= larguraTelaTransicaoReferencia)){
             telaModoExibicao = "computador";
             experienciaContainer.innerHTML = exibicaoComputador;
-
-            console.log("EXPERIÊNCIA CARREGADO PC");
             
         }else if((telaModoExibicao != "mobile") && (window.innerWidth < larguraTelaTransicaoReferencia)){
             telaModoExibicao = "mobile";
             experienciaContainer.innerHTML = exibicaoMobile;
-
-            console.log("EXPERIÊNCIA CARREGADO MOBILE");
         }
-
-        window.telaModoExibicao = telaModoExibicao;
-    } 
     
-    window.telaExibicaoReferencia = telaModoExibicao;
+        window.telaModoExibicao = telaModoExibicao;
+        window.experienciaPronta = true;
+    
+        if (window.animations_update) window.animations_update();
+    }
     
 })();

@@ -1,5 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({
+    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+    ignoreMobileResize: true
+});
+
 function preloadImg(selector = "img") {
   return new Promise((resolve) => {
     imagesLoaded(document.querySelectorAll(selector), { background: true }, resolve);
@@ -22,19 +27,11 @@ function lenisInitStart() {
         direction: 'vertical', 
         gesturedirection: 'vertical', 
         smoothtouch: false, 
+        smoothWheel: true,
         touchmultiplier: 2, 
     });
 
-    function raf(time) { 
-        lenis.raf(time); 
-        requestAnimationFrame(raf); 
-    } 
-    requestAnimationFrame(raf);
-
     lenis.on('scroll', ScrollTrigger.update);
-
-    lenis.on('scroll', () => ScrollTrigger.update());
-
     
     window.lenis = lenis;
     window.ScrollTrigger = ScrollTrigger;
@@ -42,31 +39,35 @@ function lenisInitStart() {
     gsap.ticker.add((time) => lenis.raf(time * 1000)); 
     gsap.ticker.lagSmoothing(0);
 
-    gsap.ticker.add(() => {
+    const resizeObserver = new ResizeObserver(() => {
         if (window.lenis) {
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            
-            if (Math.round(docHeight) !== Math.round(window.lenis.limit)) {                
-                window.lenis.resize();
-                ScrollTrigger.refresh();
-            }
+            window.lenis.resize();
+            window.ScrollTrigger.refresh();            
         }
     });
+    resizeObserver.observe(document.body);
 
+    let resizeTimer;
     window.addEventListener('resize', () => {
-        window.lenis.resize();
-        if(window.telaExibicaoReferencia != window.telaModoExibicao){
-            window.animations_update();            
-            window.telaExibicaoReferencia = window.telaModoExibicao;
-        }else{
-            window.ScrollTrigger.refresh();
-        }
+        if (window.lenis) window.lenis.resize();
+
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(() => {
+            if(window.telaExibicaoReferencia != window.telaModoExibicao){
+                window.animations_update();            
+                window.telaExibicaoReferencia = window.telaModoExibicao;
+            }else{
+                if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+            }
+        }, 200);
     });
 
     window.addEventListener('load', () => {
-        window.lenis.resize();
-        window.animations_update();
+        if (window.lenis) window.lenis.resize();
+        
+        if (window.experienciaPronta && window.formacaoPronta) {
+            window.animations_update();
+        }
     });
-
-    console.log("LENIS INIT");
 }

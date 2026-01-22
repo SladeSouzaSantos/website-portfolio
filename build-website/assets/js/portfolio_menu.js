@@ -70,6 +70,11 @@
         });
         
         portfolioArea.innerHTML = portfolioAreaCodigo;
+
+        if(window.lenis) window.lenis.resize();
+        requestAnimationFrame(() => {
+            if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+        });
     }
 
     /* --- NOVAS FUNÇÕES DO MODAL (GLOBALMENTE ACESSÍVEIS) --- */

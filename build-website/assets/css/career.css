@@ -82,6 +82,10 @@
     fill: var(--md-sys-on-surface-filter);
 }
 
+.experiencia__local-container, .experiencia__linha-historica, .experiencia__icons, .experiencia__cargo-container{
+    will-change: transform, opacity;
+}
+
 @media(max-width: 899.5px){
     .experiencia__container__historico{
         gap: 20px;

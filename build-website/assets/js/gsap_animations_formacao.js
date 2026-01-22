@@ -3,8 +3,6 @@ window.animation_formacao = function animation_formacao() {
     const historicoFormacaoLinha = document.querySelectorAll(".formacao__linha-historica");
     const historicoFormacaoIcon = document.querySelectorAll(".formacao__icons");
     const historicoFormacaoCargo = document.querySelectorAll(".formacao__cargo-container");
-
-    console.log("GSAP FORMAÇÃO");
     
     historicoFormacaoLocal.forEach((formacao) => {
         gsap.from(formacao, {
@@ -19,7 +17,6 @@ window.animation_formacao = function animation_formacao() {
             x: -50,
             autoAlpha: 0,
             duration: 0.25,
-            stagger: 2,
             ease: "power2.out"
         });
     });
@@ -36,7 +33,6 @@ window.animation_formacao = function animation_formacao() {
             },
             y: 50,
             duration: 0.25,
-            stagger: 2,
             ease: "power2.out"
         });
     });
@@ -53,7 +49,6 @@ window.animation_formacao = function animation_formacao() {
             },
             scale: 0.001,
             duration: 0.25,
-            stagger: 2,
             ease: "power2.out"
         });
     });
@@ -71,7 +66,6 @@ window.animation_formacao = function animation_formacao() {
             x: 50,
             autoAlpha: 0,
             duration: 0.25,
-            stagger: 2,
             ease: "power2.out"
         });
     });

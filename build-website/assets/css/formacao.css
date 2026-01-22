@@ -78,6 +78,10 @@
     padding: 6px;
 }
 
+.formacao__local-container, .formacao__linha-historica, .formacao__icons, .formacao__cargo-container{
+    will-change: transform, opacity;
+}
+
 @media(max-width: 899.5px){
     .formacao__container__historico{
         gap: 20px;
