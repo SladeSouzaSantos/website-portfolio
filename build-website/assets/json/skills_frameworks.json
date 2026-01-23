@@ -3,24 +3,36 @@
         "titulo": "Spring",
         "percentagem": 85,
         "idicon": "spring",
-        "descricao": "Proficiência no ecossistema Spring (Boot, Data, Security), aplicando SOLID e Design Patterns para APIs seguras."
-    },
-    {
-        "titulo": "Hibernate",
-        "percentagem": 85,
-        "idicon": "hibernate",
-        "descricao": "Domínio de ORM para persistência Java, garantindo mapeamento eficiente em bancos relacionais como PostgreSQL e H2."
-    },
-    {
-        "titulo": "Angular",
-        "percentagem": 70,
-        "idicon": "angular",
-        "descricao": "Desenvolvimento front-end estruturado, com foco em arquitetura de componentes e Single Page Applications."
+        "descricao": "Proficiência no ecossistema Spring (Boot, Data, Security), aplicando SOLID e Design Patterns para a criação de APIs seguras e de alta performance."
     },
     {
         "titulo": "Django",
         "percentagem": 80,
         "idicon": "django",
-        "descricao": "Criação de backends ágeis e seguros em Python, com foco em rápido desenvolvimento e integrações de dados."
-    }
+        "descricao": "Criação de back-ends ágeis e seguros em Python, com foco em rápido desenvolvimento e integrações eficientes de dados."
+    },       
+    {
+        "titulo": "Angular",
+        "percentagem": 70,
+        "idicon": "angular",
+        "descricao": "Desenvolvimento front-end estruturado em SPAs, com foco em arquitetura de componentes e consumo de APIs RESTful."
+    },    
+    {
+        "titulo": "WordPress",
+        "percentagem": 95,
+        "idicon": "wordpress",
+        "descricao": "Amplo domínio em personalização técnica, performance e desenvolvimento de temas/plugins customizados."
+    },
+    {
+        "titulo": "JBoss",
+        "percentagem": 80,
+        "idicon": "jboss",
+        "descricao": "Experiência com servidor de aplicação para deploy e manutenção de sistemas corporativos Java EE de grande porte."
+    },
+    {
+        "titulo": "Hibernate",
+        "percentagem": 85,
+        "idicon": "hibernate",
+        "descricao": "Domínio da tecnologia ORM para persistência de dados em Java, garantindo mapeamento eficiente em bancos como PostgreSQL e H2."
+    }    
 ]
