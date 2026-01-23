@@ -176,6 +176,14 @@
     opacity: 0.975;
 }
 
+.skill_click-me {
+    position: absolute;
+    top: -30px;
+    left: -45px;
+    width: 100px;
+    font-size: 50px;
+}
+
 .hidden { display: none !important; }
 
 .skills-list-view {

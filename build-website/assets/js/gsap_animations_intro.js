@@ -95,9 +95,19 @@ gsap.from(".skills-layout-wrapper", {
     ease: "power2.out"
 });
 
+gsap.to(".skill_click-me", {
+    scrollTrigger: {
+        trigger: ".skills-layout-wrapper",
+        start: "top 80%",
+    },
+    duration: 2,
+    autoAlpha: 0,
+    delay: 5
+});
+
 gsap.from(".skill-toggle-group", {
     duration: 1,
     scale: 0.9,
     repeat: -1,
     yoyo: true
-})
+});
