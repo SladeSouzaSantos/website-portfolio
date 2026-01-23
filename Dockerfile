@@ -22,6 +22,8 @@ FROM nginx:stable-alpine
 # Copia a pasta 'dist' que o Gulp gerou no estágio anterior
 COPY --from=builder /app/dist /usr/share/nginx/html
 
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Expõe a porta 80 para o tráfego web
 EXPOSE 80
 
