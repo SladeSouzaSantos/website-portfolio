@@ -3,6 +3,21 @@ window.animation_formacao = function animation_formacao() {
     const historicoFormacaoLinha = document.querySelectorAll(".formacao__linha-historica");
     const historicoFormacaoIcon = document.querySelectorAll(".formacao__icons");
     const historicoFormacaoCargo = document.querySelectorAll(".formacao__cargo-container");
+
+    gsap.from(".formacao__title", {
+        scrollTrigger: {
+            trigger: ".formacao__title",
+            start: "top bottom",
+            end: "bottom 75%",
+            markers: false,
+            scrub: 1,
+            invalidateOnRefresh: true
+        },
+        y: -50,
+        autoAlpha: 0,
+        duration: 0.25,
+        ease: "power2.out"
+    });
     
     historicoFormacaoLocal.forEach((formacao) => {
         gsap.from(formacao, {

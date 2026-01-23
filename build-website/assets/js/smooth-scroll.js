@@ -21,7 +21,9 @@ preloadImg(".img__or__svg").then(() => {
 
 function lenisInitStart() {
     const lenis = new Lenis({ 
-        duration: 1.2, 
+        duration: 2, 
+        lerp: 0.05,
+        wheelMultiplier: 0.8,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
         smooth: true, 
         direction: 'vertical', 

@@ -7,7 +7,7 @@ html.lenis {
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto;
+  scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
@@ -117,4 +117,10 @@ h2{
         height: 45px;
         opacity: 0.5 !important;
     }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
 }

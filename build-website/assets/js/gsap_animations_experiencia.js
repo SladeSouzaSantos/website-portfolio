@@ -4,6 +4,21 @@ window.animation_experiencia = function animation_experiencia() {
     const historicoExperienciaIcon = document.querySelectorAll(".experiencia__icons");
     const historicoExperienciaCargo = document.querySelectorAll(".experiencia__cargo-container");
     
+    gsap.from(".experiencia__title", {
+        scrollTrigger: {
+            trigger: ".experiencia__title",
+            start: "top bottom",
+            end: "bottom 75%",
+            markers: false,
+            scrub: 1,
+            invalidateOnRefresh: true
+        },
+        y: -50,
+        autoAlpha: 0,
+        duration: 0.25,
+        ease: "power2.out"
+    });
+    
     historicoExperienciaLocal.forEach((experiencia) => {
         gsap.from(experiencia, {
             scrollTrigger: {
