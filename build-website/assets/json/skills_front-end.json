@@ -1,5 +1,23 @@
 [
     {
+        "titulo": "React",
+        "percentagem": 85,
+        "idicon": "react",
+        "descricao": "Desenvolvimento de interfaces modernas e dinâmicas, integrando-as a backends em Node.js ou Django. Foco em componentização, hooks e consumo eficiente de APIs RESTful."
+    },
+    {
+        "titulo": "Flutter",
+        "percentagem": 90,
+        "idicon": "flutter",
+        "descricao": "Especialista em desenvolvimento Mobile multi-plataforma. Foco em Clean Architecture e gerenciamento de estado para garantir performance nativa e interfaces ricas em UX/UI."
+    },    
+    {
+        "titulo": "Dart",
+        "percentagem": 90,
+        "idicon": "dart",
+        "descricao": "Domínio da linguagem fundamental para o framework Flutter, priorizando a arquitetura limpa e alta performance em aplicações mobile."
+    },    
+    {
         "titulo": "HTML",
         "percentagem": 90,
         "idicon": "html",
@@ -12,21 +30,9 @@
         "descricao": "Experiência em CSS3 e pré-processadores (como SASS ou LESS) com foco em design responsivo (Mobile First) e arquitetura de código (BEM ou Atomic Design). Habilidade em criar interfaces elegantes e de alta performance, utilizando técnicas de transição e animação."
     },
     {
-        "titulo": "JavaScript",
-        "percentagem": 80,
-        "idicon": "jscript",
-        "descricao": "Sólido conhecimento de JavaScript moderno (ES6+). Habilidade na manipulação eficiente do DOM, desenvolvimento Front-end interativo e integração com APIs RESTful, aplicando as melhores práticas de código assíncrono."
-    },
-    {
         "titulo": "TypeScript",
         "percentagem": 75,
         "idicon": "typescript",
-        "descricao": "Utilização do TypeScript para garantir a tipagem estática e segurança do código em projetos Front-end e Back-end (Node.js). Essencial para a escalabilidade e manutenção de grandes bases de código, reduzindo erros em tempo de execução."
-    },
-    {
-        "titulo": "Dart",
-        "percentagem": 90,
-        "idicon": "dart",
-        "descricao": "Domínio da linguagem Dart, fundamental para o desenvolvimento de aplicações de alta performance utilizando o framework Flutter. Experiência em desenvolvimento Mobile multi-plataforma, priorizando a arquitetura limpa e o gerenciamento de estado (State Management)."
+        "descricao": "Utilização para garantir tipagem estática e segurança em larga escala tanto no Front-end quanto no Back-end com Node.js."
     }
 ]

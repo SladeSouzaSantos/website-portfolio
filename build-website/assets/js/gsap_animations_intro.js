@@ -51,7 +51,25 @@ aboutTL
         autoAlpha: 0,
         duration: 0.5
     }, "-=0.4")
-    .from(".about__context p", {
+    .from(".about__p__1", {
+        y: -20,
+        autoAlpha: 0,
+        duration: 0.5,
+        stagger: 0.2
+    }, "-=0.2")
+    .from(".about__p__2", {
+        y: -20,
+        autoAlpha: 0,
+        duration: 0.5,
+        stagger: 0.2
+    }, "-=0.2")
+    .from(".about__ul__1", {
+        y: -20,
+        autoAlpha: 0,
+        duration: 0.5,
+        stagger: 0.2
+    }, "-=0.2")
+    .from(".about__p__3", {
         y: -20,
         autoAlpha: 0,
         duration: 0.5,

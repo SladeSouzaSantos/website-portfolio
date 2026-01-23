@@ -68,7 +68,8 @@
     font-weight: 700;
 }
 
-.about__context p{
+.about__context p,
+.about__context ul li {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.0rem;
     font-weight: 400;
@@ -78,7 +79,46 @@
     overflow-wrap: break-word;
 }
 
+.about__context ul li::marker {
+    color: var(--md-sys-color-accent); /* Caso use variáveis */
+    /* Se não usar variáveis, coloque a cor fixa, por exemplo: */
+    /* color: #007bff; */ 
+    font-size: 1.1rem; /* Opcional: aumenta um pouco o destaque da bolinha */
+}
 
+.about__context ul {
+    /* Garante que o estilo de "bolinha" seja aplicado */
+    list-style-type: disc !important; 
+    
+    /* Garante que a bolinha fique dentro do fluxo do texto */
+    list-style-position: inside; 
+    
+    /* Espaçamento para não grudar nos parágrafos */
+    margin-top: 1rem;
+    padding-left: 0; 
+}
+
+.about__context ul li {
+    /* Mantém o alinhamento justificado se desejar, ou mude para left */
+    text-align: left; 
+    
+    /* Espaço entre os itens */
+    margin-bottom: 0.8rem;
+    
+    /* Garante que o texto herde as configurações que você já tem */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.0rem;
+    line-height: 1.6rem;
+}
+
+.about__context ul {
+    padding-left: 1.2rem;  /* Recuo para as "bolinhas" da lista */
+}
+
+/* Espaçamento entre os itens da lista para não virar um bloco denso */
+.about__context ul li {
+    margin-bottom: 0.8rem;
+}
 
 .about__icons {
     fill: var(--md-sys-color-on-secondary-container);
