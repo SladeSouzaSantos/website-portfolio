@@ -89,7 +89,7 @@
         if (projeto.site && projeto.site !== "" && projeto.site !== "#") {
             linkProjetoHTML = `
                 <div class="modal__link-container">
-                    <a href="${projeto.site}" target="_blank" class="modal__link-site on-primary-container-text">
+                    <a href="${projeto.site}" target="_blank" rel="noopener noreferrer" class="modal__link-site on-primary-container-text">
                         Acessar Site do Projeto
                         <svg class="img__or__svg modal__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     </a>
