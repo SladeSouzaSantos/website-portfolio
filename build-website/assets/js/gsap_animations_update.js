@@ -37,7 +37,7 @@ window.animations_update = function animations_update(){
     if (typeof window.animation_formacao === "function") window.animation_formacao();
 
     
-    window.lenis.resize();              
+    if(window.lenis) window.lenis.resize();              
     requestAnimationFrame(() => {
         window.ScrollTrigger.refresh();
     });

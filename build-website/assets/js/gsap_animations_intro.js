@@ -94,3 +94,10 @@ gsap.from(".skills-layout-wrapper", {
     stagger: 0.2,
     ease: "power2.out"
 });
+
+gsap.from(".skill-toggle-group", {
+    duration: 1,
+    scale: 0.9,
+    repeat: -1,
+    yoyo: true
+})
