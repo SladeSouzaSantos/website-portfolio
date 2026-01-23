@@ -39,16 +39,8 @@ function lenisInitStart() {
     gsap.ticker.add((time) => lenis.raf(time * 1000)); 
     gsap.ticker.lagSmoothing(0);
 
-    const resizeObserver = new ResizeObserver(() => {
-        if (window.lenis) {
-            window.lenis.resize();
-            window.ScrollTrigger.refresh();            
-        }
-    });
-    resizeObserver.observe(document.body);
-
     let resizeTimer;
-    window.addEventListener('resize', () => {
+    const resizeObserver = new ResizeObserver(() => {        
         if (window.lenis) window.lenis.resize();
 
         clearTimeout(resizeTimer);
@@ -62,6 +54,7 @@ function lenisInitStart() {
             }
         }, 200);
     });
+    resizeObserver.observe(document.body);
 
     window.addEventListener('load', () => {
         if (window.lenis) window.lenis.resize();

@@ -1,6 +1,3 @@
-/*let experienciaPronta = false;
-let formacaoPronta = false;*/
-
 window.animations_update = function animations_update(){
     if (!(window.experienciaPronta && window.formacaoPronta)) return;
 
@@ -39,6 +36,8 @@ window.animations_update = function animations_update(){
 
     if (typeof window.animation_formacao === "function") window.animation_formacao();
 
+    
+    window.lenis.resize();              
     requestAnimationFrame(() => {
         window.ScrollTrigger.refresh();
     });

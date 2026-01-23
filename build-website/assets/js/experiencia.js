@@ -3,26 +3,17 @@
     const responseJsonExperiencia = await fetch("assets/json/experiencia.json");
     const experiencias = await responseJsonExperiencia.json();
 
+    const larguraTelaTransicaoReferencia = 900;
+    var telaModoExibicao = "";
+    var exibicaoComputador = "";
+    var exibicaoMobile = "";
+
     montarTelaExperiencia();
 
     window.telaExibicaoReferencia = telaModoExibicao;
     window.telaExibicaoReferenciaExperiencia = telaModoExibicao;
-    
-    window.addEventListener('resize', () => {
-        if(window.telaExibicaoReferenciaExperiencia != window.telaModoExibicao){
-            montarTelaExperiencia();           
-            window.telaExibicaoReferenciaExperiencia = window.telaModoExibicao;
-        }
-    });
 
     function montarTelaExperiencia(){
-        const larguraTelaTransicaoReferencia = 900;
-        var telaModoExibicao = "";
-        var exibicaoComputador = "";
-        var exibicaoMobile = "";
-        
-        const larguraTela = window.innerWidth;
-    
         if(telaModoExibicao == ""){
             var interacoes = 0;
             var styleUltimoContainer = "";
@@ -83,5 +74,12 @@
     
         if (window.animations_update) window.animations_update();
     }
-    
+
+    const observer = new ResizeObserver(entries => {
+        if(window.telaExibicaoReferenciaExperiencia != window.telaModoExibicao){
+            montarTelaExperiencia();           
+            window.telaExibicaoReferenciaExperiencia = window.telaModoExibicao;
+        }
+    });
+    observer.observe(document.body);
 })();
