@@ -28,7 +28,7 @@ function lenisInitStart() {
         smooth: true, 
         direction: 'vertical', 
         gesturedirection: 'vertical', 
-        smoothtouch: false, 
+        smoothtouch: true, 
         smoothWheel: true,
         touchmultiplier: 2, 
     });
