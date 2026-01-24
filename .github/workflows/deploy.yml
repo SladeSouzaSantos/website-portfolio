@@ -1,0 +1,35 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches: [ master, dev ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # ESTE PASSO É OBRIGATÓRIO PARA QUEM USA TAILSCALE
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            if [ "${{ github.ref }}" == "refs/heads/master" ]; then
+              echo "🚀 Atualizando Produção (phasscode.com)..."
+              cd /app/prod
+              docker stack deploy -c docker-stack.yml phass-prod --with-registry-auth --resolve-image always
+            else
+              echo "🧪 Atualizando Desenvolvimento (dev.phasscode.com)..."
+              cd /app/dev
+              docker stack deploy -c docker-stack-dev.yml phass-dev --with-registry-auth --resolve-image always
+            fi

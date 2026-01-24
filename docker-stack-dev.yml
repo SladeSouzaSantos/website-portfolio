@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  site-dev: # Nome diferente para não conflitar
+    build:
+      context: https://github.com/SladeSouzaSantos/website-portfolio.git#dev
+    image: phasscode-portfolio-dev:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8082:80"
+    networks:
+      - phass-network
+
+networks:
+  phass-network:
+    external: true

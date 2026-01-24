@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  site: # Nome interno curto
+    build:
+      context: https://github.com/SladeSouzaSantos/website-portfolio.git#master
+    image: phasscode-portfolio:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8081:80"
+    networks:
+      - phass-network
+
+networks:
+  phass-network:
+    external: true
