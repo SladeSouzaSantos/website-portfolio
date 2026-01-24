@@ -5,13 +5,35 @@ on:
     branches: [ master, dev ]
 
 jobs:
-  deploy:
+  # 🔍 JOB 1: VALIDAÇÃO (LINT)
+  # Verifica se o HTML, CSS e JS possuem erros de sintaxe antes de permitir o deploy.
+  lint:
+    name: Lint Code Base
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # ESTE PASSO É OBRIGATÓRIO PARA QUEM USA TAILSCALE
+      - name: Lint HTML, CSS and JS
+        uses: github/super-linter@v5
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
+
+  # 🚀 JOB 2: DEPLOY
+  # Só inicia se o Job de Lint terminar com sucesso (needs: lint).
+  deploy:
+    name: Deploy to Server
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: Connect to Tailscale
         uses: tailscale/github-action@v2
         with:
@@ -33,3 +55,31 @@ jobs:
               cd /app/dev
               docker stack deploy -c docker-stack-dev.yml phass-dev --with-registry-auth --resolve-image always
             fi
+
+  # ✅ JOB 3: VERIFICAÇÃO (HEALTH CHECK)
+  # Garante que o site realmente abriu após o deploy terminar.
+  healthcheck:
+    name: Verify Deployment
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+
+      - name: Wait and Check URL
+        run: |
+          echo "⏳ Aguardando 15 segundos para o container estabilizar..."
+          sleep 15
+          
+          # Define a porta baseada na branch
+          if [ "${{ github.ref }}" == "refs/heads/master" ]; then
+            PORT=8081
+          else
+            PORT=8082
+          fi
+          
+          echo "🌐 Testando acesso em http://${{ secrets.SERVER_HOST }}:$PORT"
+          # Tenta acessar o site. Se falhar (não retornar 200 OK), o job falha.
+          curl -f http://${{ secrets.SERVER_HOST }}:$PORT || exit 1
