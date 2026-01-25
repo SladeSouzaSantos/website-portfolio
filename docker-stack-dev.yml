@@ -3,7 +3,7 @@ services:
   site-dev: # Nome diferente para não conflitar
     build:
       context: https://github.com/SladeSouzaSantos/website-portfolio.git#dev
-    image: phasscode-portfolio-dev:latest
+    image: phasscode_dev-portfolio-site:latest
     deploy:
       restart_policy:
         condition: on-failure

@@ -80,6 +80,6 @@ jobs:
             PORT=8082
           fi
           
-          echo "🌐 Testando acesso em http://${{ secrets.SERVER_HOST }}:$PORT"
-          # Tenta acessar o site. Se falhar (não retornar 200 OK), o job falha.
-          curl -f http://${{ secrets.SERVER_HOST }}:$PORT || exit 1
+          # Melhoria: Usando o IP direto da Tailscale para o Health Check interno
+          echo "🌐 Testando acesso interno via Tailscale em http://100.71.249.12:$PORT"
+          curl -f http://100.71.249.12:$PORT || exit 1

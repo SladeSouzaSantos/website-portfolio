@@ -3,7 +3,7 @@ services:
   site: # Nome interno curto
     build:
       context: https://github.com/SladeSouzaSantos/website-portfolio.git#master
-    image: phasscode-portfolio:latest
+    image: phasscode-portfolio-site:latest
     deploy:
       restart_policy:
         condition: on-failure
