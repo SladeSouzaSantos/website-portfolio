@@ -1,9 +1,7 @@
 version: '3.8'
 services:
-  site-dev: # Nome diferente para não conflitar
-    build:
-      context: https://github.com/SladeSouzaSantos/website-portfolio.git#dev
-    image: phasscode_dev-portfolio-site:latest
+  site-dev:
+    image: ghcr.io/sladesouzasantos/website-portfolio:latest
     deploy:
       restart_policy:
         condition: on-failure

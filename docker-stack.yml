@@ -1,12 +1,13 @@
 version: '3.8'
 services:
-  site: # Nome interno curto
-    build:
-      context: https://github.com/SladeSouzaSantos/website-portfolio.git#master
-    image: phasscode-portfolio-site:latest
+  site:
+    image: ghcr.io/sladesouzasantos/website-portfolio:latest
     deploy:
       restart_policy:
         condition: on-failure
+      placement:
+        constraints:
+          - node.role == manager
     ports:
       - "8081:80"
     networks:

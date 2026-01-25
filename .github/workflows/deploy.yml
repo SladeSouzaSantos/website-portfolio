@@ -6,7 +6,6 @@ on:
 
 jobs:
   # 🔍 JOB 1: VALIDAÇÃO (LINT)
-  # Verifica se o HTML, CSS e JS possuem erros de sintaxe antes de permitir o deploy.
   lint:
     name: Lint Code Base
     runs-on: ubuntu-latest
@@ -24,11 +23,44 @@ jobs:
           VALIDATE_CSS: true
           VALIDATE_JAVASCRIPT_ES: true
 
-  # 🚀 JOB 2: DEPLOY
-  # Só inicia se o Job de Lint terminar com sucesso (needs: lint).
+  # 🏗️ JOB 2: BUILD E PUSH (CRIA A IMAGEM DOCKER)
+  # Este passo cria a imagem para a arquitetura do Raspberry Pi e envia para o GitHub Packages.
+  build:
+    name: Build and Push Image
+    needs: lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          platforms: linux/arm64
+          push: true
+          tags: ghcr.io/sladesouzasantos/website-portfolio:latest
+
+  # 🚀 JOB 3: DEPLOY
   deploy:
     name: Deploy to Server
-    needs: lint
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -49,6 +81,7 @@ jobs:
             if [ "${{ github.ref }}" == "refs/heads/master" ]; then
               echo "🚀 Atualizando Produção (phasscode.com)..."
               cd /app/prod
+              # O --resolve-image always força o Swarm a buscar o novo digest da imagem no GHCR
               docker stack deploy -c docker-stack.yml phass-prod --with-registry-auth --resolve-image always
             else
               echo "🧪 Atualizando Desenvolvimento (dev.phasscode.com)..."
@@ -56,8 +89,7 @@ jobs:
               docker stack deploy -c docker-stack-dev.yml phass-dev --with-registry-auth --resolve-image always
             fi
 
-  # ✅ JOB 3: VERIFICAÇÃO (HEALTH CHECK)
-  # Garante que o site realmente abriu após o deploy terminar.
+  # ✅ JOB 4: VERIFICAÇÃO (HEALTH CHECK)
   healthcheck:
     name: Verify Deployment
     needs: deploy
@@ -73,13 +105,11 @@ jobs:
           echo "⏳ Aguardando 15 segundos para o container estabilizar..."
           sleep 15
           
-          # Define a porta baseada na branch
           if [ "${{ github.ref }}" == "refs/heads/master" ]; then
             PORT=8081
           else
             PORT=8082
           fi
           
-          # Melhoria: Usando o IP direto da Tailscale para o Health Check interno
           echo "🌐 Testando acesso interno via Tailscale em http://100.71.249.12:$PORT"
           curl -f http://100.71.249.12:$PORT || exit 1
