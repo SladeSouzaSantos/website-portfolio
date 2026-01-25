@@ -3,13 +3,19 @@
         "titulo": "Git/GitHub",
         "percentagem": 90,
         "idicon": "github",
-        "descricao": "Domínio em controle de versão, fluxos colaborativos e CI/CD para integração contínua em equipes multidisciplinares."
+        "descricao": "Implementação de pipelines complexos com GitHub Actions, incluindo Linting, Docker Deployment e Health Checks automatizados."
     },
     {
         "titulo": "Docker",
         "percentagem": 70,
         "idicon": "docker",
-        "descricao": "Containerização de aplicações para garantir ambientes de produção consistentes, isolados e portáteis."
+        "descricao": "Gerenciamento de infraestrutura com Docker Swarm, redes Overlay, volumes persistentes e ambientes isolados de Prod/Dev."
+    },
+    {
+        "titulo": "Cloud & Networking",
+        "percentagem": 75,
+        "idicon": "cloud",
+        "descricao": "Configuração de túneis seguros com Cloudflare Zero Trust e redes Mesh VPN (Tailscale) para exposição segura de serviços."
     },
     {
         "titulo": "Cypress",
