@@ -82,11 +82,11 @@ jobs:
               echo "🚀 Atualizando Produção (phasscode.com)..."
               cd /app/prod
               # O --resolve-image always força o Swarm a buscar o novo digest da imagem no GHCR
-              docker stack deploy -c docker-stack.yml phass-prod --with-registry-auth --resolve-image always
+              docker stack deploy -c docker-stack.yml phass-prod --with-registry-auth --resolve-image always --prune
             else
               echo "🧪 Atualizando Desenvolvimento (dev.phasscode.com)..."
               cd /app/dev
-              docker stack deploy -c docker-stack-dev.yml phass-dev --with-registry-auth --resolve-image always
+              docker stack deploy -c docker-stack-dev.yml phass-dev --with-registry-auth --resolve-image always --prune
             fi
 
   # ✅ JOB 4: VERIFICAÇÃO (HEALTH CHECK)

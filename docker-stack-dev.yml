@@ -3,6 +3,10 @@ services:
   site-dev:
     image: ghcr.io/sladesouzasantos/website-portfolio:latest
     deploy:
+      replicas: 1  # Garante que apenas um container exista por vez
+      update_config:
+        parallelism: 1
+        order: stop-first # Para o antigo antes de subir o novo (evita conflito de porta)
       restart_policy:
         condition: on-failure
     ports:
