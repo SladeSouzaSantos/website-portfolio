@@ -102,8 +102,8 @@ jobs:
 
       - name: Wait and Check URL
         run: |
-          echo "⏳ Aguardando 15 segundos para o container estabilizar..."
-          sleep 15
+          echo "⏳ Aguardando 30 segundos para o container estabilizar..."
+          sleep 30
           
           if [ "${{ github.ref }}" == "refs/heads/master" ]; then
             PORT=8081
