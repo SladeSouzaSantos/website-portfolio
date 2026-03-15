@@ -11,6 +11,39 @@
         "descricao": "Criação de um website institucional completo para a empresa Siberian Web Solutions, com foco em design responsivo e otimização para motores de busca (SEO). O site utiliza a plataforma WordPress para facilitar a gestão de conteúdo pelo cliente."
     },
     {
+        "id": "greencity_hsp",
+        "titulo": "HSP Simulator (Engine de Cálculo)",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "hsp-greencity.webp",
+        "linguagens": ["python", "github", "docker"],
+        "icon_acess": "website",
+        "site": "https://hsp.greencity.net.br/",
+        "descricao": "O núcleo de inteligência do ecossistema HSP. Este serviço atua como uma engine de simulação para sistemas de energia, gerenciando o processamento de dados históricos e cálculos de eficiência. A arquitetura foi projetada para ser escalável via Docker, expondo endpoints documentados que alimentam tanto o Dashboard administrativo quanto ferramentas de análise técnica, centralizando a regra de negócio em um único ponto de verdade."
+    },
+    {
+        "id": "greencity_hsp_api",
+        "titulo": "HSP API (Core Service)",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "hsp-api.webp",
+        "linguagens": ["python", "github", "docker"],
+        "icon_acess": "website",
+        "site": "https://hsp.greencity.net.br/api/docs",
+        "descricao": "API RESTful responsável pelo motor de regras e persistência de dados do sistema HSP. Desenvolvida com FastAPI para garantir baixa latência, a API gerencia o ciclo de vida das usinas, processamento de histórico e controle de acesso. Implementa documentação automática via Swagger e validação rigorosa de dados com Pydantic, assegurando a integridade das informações técnicas das usinas."
+    },
+    {
+        "id": "greencity_api_orcamento",
+        "titulo": "API de Orçamentos Automatizados",
+        "categoria": "WEBSITE",
+        "tipo": "pc",
+        "imagem": "api-orcamento.webp",
+        "linguagens": ["php", "github", "docker"],
+        "icon_acess": "github",
+        "site": "https://github.com/SladeSouzaSantos/greencity-api-orcamento",
+        "descricao": "Microserviço especializado na lógica de geração de orçamentos complexos para o setor de energia solar. A API processa variáveis técnicas e financeiras para retornar PDFs estruturados e dados para o ERP. Conta com documentação interativa via Swagger (OpenAPI), seguindo padrões de mercado para facilitar a integração com outros serviços do ecossistema Greencity."
+    },
+    {
         "id": "greencity_solutions",
         "titulo": "Greencity Solutions",
         "categoria": "APPs",

@@ -47,7 +47,7 @@
 
                 projeto.linguagens.forEach(linguagem => {           
                     iconesLinguagemUtilizadasDiv += `
-                    <svg class="img__or__svg portfolio__icons on-tertiary-container-filter" role="img" aria-label="Acesse o meu perfil do Linked-in"><use xlink:href="assets/img/icons.svg#${linguagem}" /></svg>
+                    <svg class="img__or__svg portfolio__icons" role="img" aria-label="Acesse o meu perfil do Linked-in"><use xlink:href="assets/img/icons.svg#${linguagem}" /></svg>
                     `;
                 });
     

@@ -12,6 +12,8 @@
     flex-direction: column;    
     justify-content: space-between;
     width: 100%;
+    fill: var(--md-sys-color-on-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
 }
 
 .portfolio__container__menu{
@@ -150,7 +152,8 @@
 }
 
 .menu-opcoes-selected svg{
-    filter: var(--md-sys-color-secondary-container-filter);
+    fill: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-secondary-container);
 }
 
 .portfolio__icons{
