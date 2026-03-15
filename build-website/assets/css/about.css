@@ -1,3 +1,11 @@
+#sobre-mim {
+    background: linear-gradient(
+        to bottom, 
+        var(--md-sys-color-secondary-container) 0%, 
+        var(--md-sys-color-surface) 100%
+    );
+}
+
 .about__group{
     display: flex;
     flex-direction: row;

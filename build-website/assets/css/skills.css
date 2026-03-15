@@ -44,7 +44,6 @@
     transition: transform 0.3s ease;
     padding: 8px 12px 20px;
     border: 1px solid;
-    box-shadow: 0 0 50px var(--md-sys-color-surface);
     opacity: 0.95;
 }
 

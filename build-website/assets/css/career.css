@@ -4,6 +4,14 @@
     line-height: 1.6rem;
 }
 
+#experiencia {
+    background: linear-gradient(
+        to bottom, 
+        var(--md-sys-color-secondary-container) 25%, 
+        var(--md-sys-color-surface) 100%
+    );
+}
+
 .experiencia__container{
     padding: 48px 10px;
     overflow: hidden;
