@@ -62,7 +62,7 @@
         "imagem": "erp.webp",
         "linguagens": ["typescript", "nodejs", "postgresql", "docker", "python"],
         "icon_acess": "website",
-        "site": "https://erp.phasscode.com",
+        "site": "",
         "descricao": "Desenvolvimento de um ecossistema ERP completo para a Greencity. O sistema conta com uma arquitetura robusta separando Front-end (React) e Back-end (Django Rest Framework), conteinerização com Docker e deploy automatizado em infraestrutura própria. Inclui módulos de gestão de funcionários, controle de permissões de acesso e integração com banco de dados relacional."
     },
     {
@@ -107,7 +107,7 @@
         "imagem": "monibank.webp",
         "linguagens": ["html", "css", "jscript"],
         "icon_acess": "website",
-        "site": "https://phasscode.com/projetos/monibank/",
+        "site": "https://projetos.phasscode.com/projetos/monibank/",
         "descricao": "Simulação de página bancária focada na validação de formulários. Implementação de lógica JavaScript para validação de CPF e data de nascimento (maioridade), utilizando o atributo 'data-attribute' para exibir mensagens de erro personalizadas."
     },
 
@@ -119,7 +119,7 @@
         "imagem": "mochila_js.webp",
         "linguagens": ["html", "css", "jscript"],
         "icon_acess": "website",
-        "site": "https://phasscode.com/projetos/mochila_local_storage_js/",
+        "site": "https://projetos.phasscode.com/projetos/mochila_local_storage_js/",
         "descricao": "Um aplicativo de lista de itens persistente (to-do list/mochila) que utiliza o Local Storage do navegador para salvar os dados. O projeto demonstra o uso de JavaScript para manipulação dinâmica do DOM, gerenciamento de eventos e persistência de dados no Front-End."
     },
 
@@ -131,7 +131,7 @@
         "imagem": "n_secreto.webp",
         "linguagens": ["html", "css", "jscript"],
         "icon_acess": "website",
-        "site": "https://phasscode.com/projetos/n_secreto/",
+        "site": "https://projetos.phasscode.com/projetos/n_secreto/",
         "descricao": "Um jogo simples de adivinhação que utiliza a Web Speech API do JavaScript para reconhecimento e síntese de voz. O projeto demonstra a integração do navegador com hardware e a implementação de lógica de jogo com feedback visual e sonoro."
     },
 
@@ -143,7 +143,7 @@
         "imagem": "teclado_som.webp",
         "linguagens": ["html", "css", "jscript"],
         "icon_acess": "website",
-        "site": "https://phasscode.com/projetos/teclado_som/",
+        "site": "https://projetos.phasscode.com/projetos/teclado_som/",
         "descricao": "Um teclado interativo que dispara diferentes sons ao ser clicado ou ao ter as teclas do teclado físico pressionadas. O projeto enfatiza o manuseio de eventos de clique e teclado e a manipulação da Web Audio API para reprodução de áudio."
     }
     
